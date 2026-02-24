@@ -26,11 +26,13 @@ jobs:
         working-directory: mainsource
         run: npm run build
 
-      - name: Deploy to Hostinger via FTP
+      - name: Deploy to Hostinger via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
           local-dir: mainsource/out/
-          server-dir: domains/aryuprojects.com/public_html/cargo/
+          server-dir: public_html/cargo2/
