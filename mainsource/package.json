@@ -7,7 +7,7 @@
       "build": "next build && npm run postbuild",
     "start": "next start",
     "lint": "eslint",
-        "postbuild": "copy .htaccess out\\.htaccess"
+        "postbuild": "cp .htaccess out/.htaccess"
 
   },
   "dependencies": {
