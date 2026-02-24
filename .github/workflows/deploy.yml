@@ -1,9 +1,14 @@
-name: Build and Update Out Folder
+name: Build and Prepare Static Site
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -11,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -21,7 +26,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install Dependencies
         working-directory: mainsource
         run: npm install
 
@@ -29,16 +34,20 @@ jobs:
         working-directory: mainsource
         run: npm run build
 
-      - name: Replace root out folder
+      - name: Clean Old Static Files From Root
         run: |
-          rm -rf out
-          cp -r mainsource/out ./out
+          rm -rf _next
+          rm -f index.html 404.html .htaccess
 
-      - name: Commit updated out folder
+      - name: Copy New Static Files To Root
+        run: |
+          cp -r mainsource/out/* .
+
+      - name: Commit Updated Static Files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions@github.com"
 
-          git add out
-          git commit -m "Deploy: update out folder" || echo "No changes"
+          git add .
+          git commit -m "Deploy: update static site" || echo "No changes"
           git push origin main
