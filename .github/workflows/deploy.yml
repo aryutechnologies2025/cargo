@@ -1,53 +1,36 @@
-name: Build and Prepare Static Site
+name: Build and Deploy via FTP
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
 
-concurrency:
-  group: deploy-main
-  cancel-in-progress: true
-
 jobs:
   deploy:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install Dependencies
+      - name: Install dependencies
         working-directory: mainsource
         run: npm install
 
-      - name: Build Next.js Static
+      - name: Build Next.js
         working-directory: mainsource
         run: npm run build
 
-      - name: Clean Old Static Files From Root
-        run: |
-          rm -rf _next
-          rm -f index.html 404.html .htaccess
-
-      - name: Copy New Static Files To Root
-        run: |
-          cp -r mainsource/out/* .
-
-      - name: Commit Updated Static Files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions@github.com"
-
-          git add .
-          git commit -m "Deploy: update static site" || echo "No changes"
-          git push origin main
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: mainsource/out/
+          server-dir: domains/aryuprojects.com/public_html/cargo/
