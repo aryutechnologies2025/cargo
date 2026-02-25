@@ -9,7 +9,6 @@ const Header = () => {
         "Services",
     "About",
     "Contact",
-    "Blogs"
   ];
 
   return (
