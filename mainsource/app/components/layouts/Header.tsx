@@ -8,6 +8,7 @@ const Header = () => {
     "Home",
     "About",
     "Contact",
+    "Track your parcel"
   ];
 
   return (
@@ -53,7 +54,8 @@ const Header = () => {
           {navItems.map((item, index) => (
             <li key={item}>
               <Link
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "-")}`}
+
                 className="block px-5 py-3  font-semibold text-white hover:text-gray-200 transition-colors  tracking-wide"
               >
                 {item}

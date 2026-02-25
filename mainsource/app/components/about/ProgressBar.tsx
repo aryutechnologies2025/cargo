@@ -49,7 +49,7 @@ const CircularProgress = ({
 };
 const ProgressBar = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 items-center mt-5 border-t border-gray-100">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 max-w-6xl px-4  items-center my-5 border-t border-gray-100 mx-auto">
       {/* Progress Chart 1 */}
       <CircularProgress percentage={58} label="Increase In Customers" />
 

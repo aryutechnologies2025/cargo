@@ -5,21 +5,20 @@ import { BiLogoTelegram } from "react-icons/bi";
 
 const Footer = () => {
   const quickLinks = [
-    "GROUND SHIPPING",
-    "RAIL SHIPPING",
-    "AIR FREIGHT",
-    "LOGISTIC SOLUTIONS",
-    "SEA FREIGHT",
-    "CARGO SHIPPING",
-    "STORAGE & PACKAGING",
+    "Home",
+    "About",
+    "Contact",
+        "Track your parcel"
+
+
   ];
 
   const footerLinks = [
-    "Terms of Use",
-    "Legal Disclaimer",
-    "Privacy Policy",
-    "Support",
-    "Sitemap",
+    "Terms and conditions",
+    // "Legal Disclaimer",
+    // "Privacy Policy",
+    // "Support",
+    // "Sitemap",
   ];
 
   return (
@@ -53,12 +52,12 @@ const Footer = () => {
               QUICK LINKS
             </h3>
             <hr className="border-[1.6] border-[#fdc300] w-8 mt-1.5" />
-            <div className="grid grid-cols-2 gap-x-4 gap-y-3  mt-12">
+            <div className="flex flex-col gap-1  mt-12">
               {quickLinks.map((link) => (
                 <Link
                   key={link}
-                  href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-[14px] font-karla font-bold border-b border-white/30 pb-3 text-[#99ABB8] hover:text-[#fdc300] transition-colors uppercase duration-200 last:border-0"
+                href={link === "Home" ? "/" : `/${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  className=" font-karla font-medium  pb-3 text-[#99ABB8] hover:text-[#fdc300] transition-colors uppercase duration-200 "
                 >
                   {link}
                 </Link>
@@ -96,7 +95,7 @@ const Footer = () => {
       {/* Bottom footer with copyright and links */}
       <div className="bg-[#1874c1] text-white">
         <div className="max-w-5xl mx-auto px-4 py-5">
-          <div className="text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className=" flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <p className=" ">
               Copyright © 2026. All rights Reserved by DesignThemes

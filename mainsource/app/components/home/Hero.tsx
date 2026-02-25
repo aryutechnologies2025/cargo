@@ -1,6 +1,9 @@
+'use client'
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
+  const router=useRouter()
   return (
     <section className="relative w-full min-h-[75vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -35,7 +38,7 @@ const Hero = () => {
                 id=""
                 className="bg-white text-xs p-1 ps-3 w-80 outline-0  [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               />
-              <button className="bg-[#fdc300] px-8 py-2 font-semibold text-xs text-white">
+              <button onClick={()=>router.push('/track-your-parcel')} className="bg-[#fdc300] px-8 py-2 font-semibold text-xs text-white">
                 TRACK RESULT
               </button>
             </div>
