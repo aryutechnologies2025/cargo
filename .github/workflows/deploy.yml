@@ -1,39 +1,37 @@
-name: Build and Deploy via FTPS
+name: Deploy – Update out Folder 
+on: 
+workflow_dispatch: 
+push: 
+branches: 
+- main 
+concurrency: 
+group: deploy-main 
+cancel-in-progress: true 
+jobs: 
+deploy: 
+runs-on: ubuntu-latest 
+steps: 
+- name: Checkout 
+uses: actions/checkout@v4 
+- name: Setup Node 
+uses: actions/setup-node@v4 
+with: 
+node-version: 20 
+- name: Install deps 
+working-directory: mainsource 
+run: npm install 
+- name: Build Next.js 
+working-directory: mainsource 
+run: npm run build 
+- name: Sync build output to root out 
+run: | 
+rm -rf out 
+cp -r mainsource/out ./out 
+- name: Commit out folder 
+run: | 
+git config user.name "github-actions" 
+git config user.email "github-actions@github.com" 
+git add out 
+git commit -m "Deploy: update out folder" || echo "No changes" 
+git push origin main 
 
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install deps
-        working-directory: mainsource
-        run: npm install
-
-      - name: Build Next.js
-        working-directory: mainsource
-        run: npm run build
-
-      - name: Deploy to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: 31.97.225.238
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./out/
-          server-dir: /home/u925800196/domains/aryuprojects.com/public_html/Cargo/out/
-          dangerous-clean-slate: true
