@@ -17,7 +17,7 @@ const Header = () => {
         <div className="flex justify-around py-6 items-center">
           {/* Logo */}
           <Image
-            src="/icons/logo.webp"
+            src="/icons/logo.png"
             alt="logo"
             width={200}
             height={20}
