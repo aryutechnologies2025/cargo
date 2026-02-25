@@ -16,6 +16,8 @@ const Header = () => {
       <div className="border-b border-gray-300">
         <div className="flex justify-around py-6 items-center">
           {/* Logo */}
+          <Link href='/'>
+          
           <Image
             src="/icons/logo.png"
             alt="logo"
@@ -23,6 +25,8 @@ const Header = () => {
             height={20}
             className="object-contain h-9 w-56"
           />
+          </Link>
+
 
           {/* Contact */}
           <div className="flex gap-3 items-center">
