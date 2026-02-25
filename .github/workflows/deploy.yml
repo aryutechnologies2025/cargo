@@ -27,13 +27,11 @@ jobs:
         working-directory: mainsource
         run: npm install
 
-      - name: Build Next.js
+      - name: Build
         working-directory: mainsource
-        run: |
-          npm run build
-          npx next export
+        run: npm run build
 
-      - name: Sync build output to root out
+      - name: Copy out folder
         run: |
           rm -rf out
           cp -r mainsource/out ./out
