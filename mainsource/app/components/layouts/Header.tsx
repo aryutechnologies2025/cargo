@@ -6,15 +6,10 @@ import { Phone } from "lucide-react";
 const Header = () => {
   const navItems = [
     "Home",
+        "Services",
     "About",
-    "Technology",
-    "Transportation",
-    "Solutions",
-    "Media",
-    "Portfolio",
-    "Franchise",
-    "Branches",
     "Contact",
+    "Blogs"
   ];
 
   return (
