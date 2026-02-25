@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # Required to push changes
+      contents: write
 
     steps:
       - name: Checkout Repository
@@ -34,14 +34,17 @@ jobs:
         working-directory: mainsource
         run: npm ci
 
-      - name: Build Next.js (Static Export)
+      - name: Clean and Build Next.js
         working-directory: mainsource
-        run: npm run build
+        run: |
+          rm -rf out
+          rm -rf .next
+          npm run build
 
       - name: Replace root out folder
         run: |
           rm -rf out
-          cp -r mainsource/out ./out
+          cp -r mainsource/out out
 
       - name: Commit and Push out folder
         run: |
