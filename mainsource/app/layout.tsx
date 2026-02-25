@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, Karla } from "next/font/google";
+import { Open_Sans, Karla,Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
@@ -11,6 +11,11 @@ const openSans = Open_Sans({
 
 const karla = Karla({
   variable: "--font-karla",
+  subsets: ["latin"],
+});
+
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
 });
 
@@ -27,11 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${openSans.variable} ${karla.variable} antialiased font-open-sans`}
+        className={` ${openSans.variable} ${karla.variable} ${raleway.variable} antialiased font-open-sans`}
       >
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

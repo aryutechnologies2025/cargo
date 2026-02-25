@@ -61,7 +61,6 @@ const CEOSection = () => {
               height={40}
               width={40}
               alt="sign"
-              quality={100}
               unoptimized
               className="object-contain w-40 h-28"
             />

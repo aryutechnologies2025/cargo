@@ -9,9 +9,9 @@ const Hero = () => {
           alt="Logistics background"
           fill
           sizes="100vw"
-          quality={90}
           className="object-cover object-top"
           priority
+          unoptimized
         />
         {/* Gradient overlay for better text contrast */}
         {/* <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div> */}

@@ -1,53 +1,64 @@
 // components/Footer.tsx
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
+import { BiLogoTelegram } from "react-icons/bi";
 
 const Footer = () => {
   const quickLinks = [
-    'GROUND SHIPPING',
-    'RAIL SHIPPING',
-    'AIR FREIGHT',
-    'LOGISTIC SOLUTIONS',
-    'SEA FREIGHT',
-    'CARGO SHIPPING',
-    'STORAGE & PACKAGING'
+    "GROUND SHIPPING",
+    "RAIL SHIPPING",
+    "AIR FREIGHT",
+    "LOGISTIC SOLUTIONS",
+    "SEA FREIGHT",
+    "CARGO SHIPPING",
+    "STORAGE & PACKAGING",
   ];
 
   const footerLinks = [
-    'Terms of Use',
-    'Legal Disclaimer',
-    'Privacy Policy',
-    'Support',
-    'Sitemap'
+    "Terms of Use",
+    "Legal Disclaimer",
+    "Privacy Policy",
+    "Support",
+    "Sitemap",
   ];
 
   return (
-    <footer className="w-full bg-gray-900 text-gray-300">
+    <footer className="w-full bg-[#2a2a2a] text-gray-300">
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          
+      <div className="max-w-6xl mx-auto px-4 py-18">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* CEO's Statement Section */}
-          <div className="space-y-4">
-            <h3 className="text-white text-lg font-semibold tracking-wide border-b border-gray-700 pb-2">
+          <div className="">
+            <h3 className="text-white font-extrabold tracking-wide">
               OUR CEO's STATEMENT
             </h3>
-            <p className="text-sm leading-relaxed text-gray-400">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-              Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <hr className="border-[1.6] border-[#fdc300] w-8 mt-1.5" />
+            <p className="text-[15px] text-[#99ABB8] leading-6 mt-12 font-karla">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
             </p>
+            <Image
+              src="/icons/sign.webp"
+              alt="sign"
+              width={20}
+              height={20}
+              className="mt-5 w-40 h-32 object-contain invert-100"
+            />
           </div>
 
           {/* Quick Links Section */}
-          <div className="space-y-4">
-            <h3 className="text-white text-lg font-semibold tracking-wide border-b border-gray-700 pb-2">
+          <div className="">
+            <h3 className="text-white font-extrabold tracking-wide">
               QUICK LINKS
             </h3>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <hr className="border-[1.6] border-[#fdc300] w-8 mt-1.5" />
+            <div className="grid grid-cols-2 gap-x-4 gap-y-3  mt-12">
               {quickLinks.map((link) => (
                 <Link
                   key={link}
-                  href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                  href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="text-[14px] font-karla font-bold border-b border-white/30 pb-3 text-[#99ABB8] hover:text-[#fdc300] transition-colors uppercase duration-200 last:border-0"
                 >
                   {link}
                 </Link>
@@ -56,51 +67,51 @@ const Footer = () => {
           </div>
 
           {/* Newsletter Section */}
-          <div className="space-y-4 md:col-span-2">
-            <h3 className="text-white text-lg font-semibold tracking-wide border-b border-gray-700 pb-2">
+          <div className=" ">
+            <h3 className="text-white font-extrabold tracking-wide">
               NEWSLETTER SIGNUP
             </h3>
-            <p className="text-sm text-gray-400">
-              If you want receive our all weekly updates about new offers and discount, signup below.
+            <hr className="border-[1.6] border-[#fdc300] w-8 mt-1.5" />
+            <p className="font-karla text-[#99ABB8] leading-6 mt-12">
+              If you want receive our all weekly updates about new offers and
+              discount, signup below.
             </p>
-            
+
             {/* Email Signup Form */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex bg-white mt-5">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-gray-500 text-gray-300 placeholder-gray-500"
+                className="flex-1 px-4 py-2 text-sm bg-white border  border-none outline-none rounded focus:outline-none focus:border-gray-500 text-black placeholder-gray-500"
               />
-              <button className="px-6 py-3 bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors duration-200 rounded">
-                SIGNUP
-              </button>
+
+              <div className="bg-[#429bd5] w-fit p-3 h-fit">
+                <BiLogoTelegram />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom footer with copyright and links */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="bg-[#1874c1] text-white">
+        <div className="max-w-5xl mx-auto px-4 py-5">
+          <div className="text-xs flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
-            <div className="text-sm text-gray-400">
-              Copyright © 2023. All rights Reserved by DesignThemes
-            </div>
+            <p className=" ">
+              Copyright © 2026. All rights Reserved by DesignThemes
+            </p>
 
             {/* Footer links */}
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 ">
               {footerLinks.map((link, index) => (
                 <div key={link} className="flex items-center">
                   <Link
-                    href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {link}
                   </Link>
-                  {index < footerLinks.length - 1 && (
-                    <span className="ml-4 text-gray-700">|</span>
-                  )}
+                  
                 </div>
               ))}
             </div>

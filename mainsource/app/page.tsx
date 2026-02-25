@@ -14,9 +14,9 @@ export default function Home() {
       <CEOSection/>
       <FeaturesSection/>
       <BlogSection/>
-      {/* <StatsSection/> */}
-      {/* <FranchiseeSection/> */}
-      {/* <TestimonialSection/> */}
+      <StatsSection/>
+      <FranchiseeSection/>
+      <TestimonialSection/>
   
     </div>
   );
