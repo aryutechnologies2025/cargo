@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      {/* <div className="relative z-10 w-fit mx-auto px-4 py-24 text-center">
+      <div className="relative z-10 w-fit mx-auto px-4 py-24 text-center">
         <div className="bg-[#00bef2]">
           <p className="bg-[#1874c1] text-white px-5 py-2 uppercase text-sm">
             Enter the Consignment No.
@@ -46,7 +46,7 @@ const Hero = () => {
             <p className="text-center text-sm text-white mt-3">Ex: 12345</p>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
