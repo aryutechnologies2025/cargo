@@ -3,7 +3,7 @@ import React from "react";
 const ContactForm = () => {
   return (
     <div
-      className=" bg-cover bg-center min-h-[600px] flex items-center"
+      className=" bg-cover bg-center min-h-150 flex items-center"
       style={{
         backgroundImage: `url('/images/contac-form-bg-image.jpg')`, 
       }}
