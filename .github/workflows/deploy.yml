@@ -14,43 +14,34 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-          cache-dependency-path: mainsource/package-lock.json
 
-      - name: Install Dependencies
+      - name: Install deps
         working-directory: mainsource
-        run: npm ci
+        run: npm install
 
-      - name: Clean and Build Next.js
+      - name: Build Next.js
         working-directory: mainsource
+        run: npm run build
+
+      - name: Sync build output to root out
         run: |
           rm -rf out
-          rm -rf .next
-          npm run build
+          cp -r mainsource/out ./out
 
-      - name: Replace root out folder
-        run: |
-          rm -rf out
-          cp -r mainsource/out out
-
-      - name: Commit and Push out folder
+      - name: Commit out folder
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
           git add out
-          git diff --cached --quiet || git commit -m "Deploy: update out folder"
+          git commit -m "Deploy: update out folder" || echo "No changes"
+
           git push origin main
