@@ -35,5 +35,5 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: mainsource/out/
-          server-dir: /home/u925800196/domains/aryuprojects.com/public_html/Cargo/out
+          server-dir: /home/u925800196/domains/aryuprojects.com/public_html/Cargo/out/
           dangerous-clean-slate: true
