@@ -6,7 +6,7 @@ import CTA from "../components/contact/ContactCTA";
 
 const page = () => {
   return (
-    <div className="w-full  text-gray-800">
+    <div >
       <TopInfoBar />
       <ContactForm />
       <GoogleMap />
