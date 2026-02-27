@@ -155,9 +155,9 @@ const TrackingPage = () => {
 
   const getCargoIcon = (mode: string) => {
     switch(mode) {
-      case 'Air Freight': return <MdFlight className="text-[#1874c1]" />;
-      case 'Sea Freight': return <MdDirectionsBoat className="text-[#1874c1]" />;
-      default: return <MdLocalShipping className="text-[#1874c1]" />;
+      case 'Air Freight': return <MdFlight className="text-[#027cc2]" />;
+      case 'Sea Freight': return <MdDirectionsBoat className="text-[#027cc2]" />;
+      default: return <MdLocalShipping className="text-[#027cc2]" />;
     }
   };
 
@@ -169,12 +169,12 @@ const TrackingPage = () => {
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-8 h-0.5 bg-[#1874c1] rounded-full"></div>
-            <Package className="text-[#1874c1] w-4 h-4 sm:w-5 sm:h-5" />
-            <div className="w-8 h-0.5 bg-[#1874c1] rounded-full"></div>
+            <div className="w-8 h-0.5 bg-[#027cc2] rounded-full"></div>
+            <Package className="text-[#027cc2] w-4 h-4 sm:w-5 sm:h-5" />
+            <div className="w-8 h-0.5 bg-[#027cc2] rounded-full"></div>
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2A2A2A] mb-2">
-            Track Your <span className="text-[#1874c1]">Parcel</span>
+            Track Your <span className="text-[#027cc2]">Parcel</span>
           </h1>
           <p className="text-[#777777] text-xs sm:text-sm max-w-xl mx-auto">
             Enter your tracking number to get real-time updates on your shipment
@@ -188,14 +188,14 @@ const TrackingPage = () => {
               <input
                 type="text"
                 placeholder="Enter tracking code (e.g., TRK-987654321)"
-                className="w-full p-3 sm:p-4 pl-10 sm:pl-12 border border-gray-300 bg-white focus:outline-none focus:border-[#1874c1] focus:ring-1 focus:ring-[#1874c1] transition-all duration-300 rounded-lg text-sm h-full"
+                className="w-full p-3 sm:p-4 pl-10 sm:pl-12 border border-gray-300 bg-white focus:outline-none focus:border-[#027cc2] focus:ring-1 focus:ring-[#027cc2] transition-all duration-300 rounded-lg text-sm h-full"
                 value={trackingId}
                 onChange={(e) => setTrackingId(e.target.value)}
               />
-              <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5 group-focus-within:text-[#1874c1] transition-colors duration-300" />
+              <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5 group-focus-within:text-[#027cc2] transition-colors duration-300" />
             </div>
             <button 
-              className="bg-[#1874c1] text-white px-6 sm:px-8 py-2.5 sm:py-4 hover:bg-[#0f5a9e] transition-all duration-300 font-medium rounded-lg flex items-center justify-center gap-2 group cursor-pointer"
+              className="bg-[#027cc2] text-white px-6 sm:px-8 py-2.5 sm:py-4 hover:bg-[#0f5a9e] transition-all duration-300 font-medium rounded-lg flex items-center justify-center gap-2 group cursor-pointer"
             >
               <Search className="w-4 h-4 group-hover:scale-110 transition-transform" />
               <span>Track</span>
@@ -219,21 +219,21 @@ const TrackingPage = () => {
 
                 <div className="space-y-4">
                   {/* Tracking Number */}
-                  <div className="bg-gray-50 p-3 rounded-lg group hover:bg-[#1874c1]/5 transition-colors duration-300">
+                  <div className="bg-gray-50 p-3 rounded-lg group hover:bg-[#027cc2]/5 transition-colors duration-300">
                     <p className="text-xs text-gray-500 uppercase mb-1">Tracking Number</p>
                     <p className="font-mono font-semibold text-sm sm:text-base flex items-center gap-2">
-                      <Package className="w-4 h-4 text-[#1874c1]" />
+                      <Package className="w-4 h-4 text-[#027cc2]" />
                       {mockData.trackingNumber}
                     </p>
                   </div>
 
                   {/* Stats Grid */}
                   <div className="flex flex-wrap gap-3">
-                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#1874c1]/5 transition-colors duration-300">
+                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#027cc2]/5 transition-colors duration-300">
                       <p className="text-xs text-gray-500 uppercase mb-1">Total Pieces</p>
                       <p className="font-semibold text-sm sm:text-base">{mockData.totalPieces}</p>
                     </div>
-                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#1874c1]/5 transition-colors duration-300">
+                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#027cc2]/5 transition-colors duration-300">
                       <p className="text-xs text-gray-500 uppercase mb-1">Cargo Mode</p>
                       <p className="font-semibold text-sm sm:text-base flex items-center gap-1">
                         {getCargoIcon(mockData.cargoMode)}
@@ -243,27 +243,27 @@ const TrackingPage = () => {
                   </div>
 
                   {/* Location */}
-                  <div className="bg-gray-50 p-3 rounded-lg group hover:bg-[#1874c1]/5 transition-colors duration-300">
+                  <div className="bg-gray-50 p-3 rounded-lg group hover:bg-[#027cc2]/5 transition-colors duration-300">
                     <p className="text-xs text-gray-500 uppercase mb-1">Beneficiary City</p>
                     <p className="font-semibold text-sm sm:text-base flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-[#1874c1]" />
+                      <MapPin className="w-4 h-4 text-[#027cc2]" />
                       {mockData.beneficiaryCity}
                     </p>
                   </div>
 
                   {/* Dates */}
                   <div className="flex flex-wrap gap-3">
-                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#1874c1]/5 transition-colors duration-300">
+                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#027cc2]/5 transition-colors duration-300">
                       <p className="text-xs text-gray-500 uppercase mb-1">Dispatch Date</p>
                       <p className="font-semibold text-sm sm:text-base flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-[#1874c1]" />
+                        <Calendar className="w-4 h-4 text-[#027cc2]" />
                         {mockData.dispatchDate}
                       </p>
                     </div>
-                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#1874c1]/5 transition-colors duration-300">
+                    <div className="bg-gray-50 p-3 grow rounded-lg group hover:bg-[#027cc2]/5 transition-colors duration-300">
                       <p className="text-xs text-gray-500 uppercase mb-1">Est. Delivery</p>
                       <p className="font-semibold text-sm sm:text-base flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-[#1874c1]" />
+                        <Clock className="w-4 h-4 text-[#027cc2]" />
                         {mockData.estimatedDelivery}
                       </p>
                     </div>
@@ -321,7 +321,7 @@ const TrackingPage = () => {
                   {mockData.events.map((event, index) => (
                     <div 
                       key={index}
-                      className="bg-gray-50 p-3 rounded-lg border-l-4 border-[#1874c1] "
+                      className="bg-gray-50 p-3 rounded-lg border-l-4 border-[#027cc2] "
                     >
                       <div className="flex items-center gap-2 mb-2">
                         {index === 0 ? (
@@ -358,9 +358,9 @@ const TrackingPage = () => {
             {/* Additional Info Card */}
             <div className="mt-4 sm:mt-6 bg-blue-50 border border-blue-100 rounded-xl p-3 sm:p-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
               <div className="flex items-start gap-3">
-                <Info className="w-4 h-4 sm:w-5 sm:h-5 text-[#1874c1] flex-shrink-0 mt-0.5" />
+                <Info className="w-4 h-4 sm:w-5 sm:h-5 text-[#027cc2] flex-shrink-0 mt-0.5" />
                 <p className="text-xs sm:text-sm text-[#2A2A2A]">
-                  Need help with your shipment? Contact our support team at <span className="text-[#1874c1] font-semibold hover:underline cursor-pointer">support@cargolord.com</span> or call <span className="text-[#1874c1] font-semibold">(01) 300 330 755</span>
+                  Need help with your shipment? Contact our support team at <span className="text-[#027cc2] font-semibold hover:underline cursor-pointer">support@cargolord.com</span> or call <span className="text-[#027cc2] font-semibold">(01) 300 330 755</span>
                 </p>
               </div>
             </div>

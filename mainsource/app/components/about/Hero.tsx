@@ -51,7 +51,7 @@
 //         <hr className="border-gray-200 border-[1.4px] " />
 
 //         <p className="text-lg tracking-[0.2em]  text-[#2A2A2A] text-center">
-//           <span className="text-[#1874C1]  mr-2">JOIN US</span>
+//           <span className="text-[#027cc2]  mr-2">JOIN US</span>
 //           WE COVER THE WHOLE WORLD
 //         </p>
 //       </div>
@@ -104,9 +104,9 @@ const Hero = () => {
          
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-[#2A2A2A] leading-tight">
             Welcome to{" "}
-            <span className="text-[#1874C1] relative inline-block">
+            <span className="text-[#027cc2] relative inline-block">
               Logistics
-              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-[#1874C1] to-transparent"></div>
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-[#027cc2] to-transparent"></div>
             </span>
             <br />
             International
@@ -128,11 +128,11 @@ const Hero = () => {
         </div>
 
        
-          <hr className="border-gray-200 border-[1.4px] transition-all duration-500 hover:border-[#1874C1]/30" />
+          <hr className="border-gray-200 border-[1.4px] transition-all duration-500 hover:border-[#027cc2]/30" />
 
         {/* Quote with animations */}
         <blockquote className="relative italic text-gray-500 font-serif text-sm sm:text-base md:text-lg leading-relaxed px-4 sm:px-6 group">
-          <FaQuoteLeft className="absolute -left-1 top-0 text-[#1874C1]/20 text-2xl sm:text-3xl transform transition-all duration-300 group-hover:scale-110 group-hover:text-[#1874C1]/30" />
+          <FaQuoteLeft className="absolute -left-1 top-0 text-[#027cc2]/20 text-2xl sm:text-3xl transform transition-all duration-300 group-hover:scale-110 group-hover:text-[#027cc2]/30" />
           <span className="relative z-10 block pl-4 sm:pl-6">
             Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
             aut fugit, sed quia consequuntur magni dolores eos qui ratione
@@ -141,30 +141,30 @@ const Hero = () => {
             numquam eius modi tempora incidunt ut labore et dolore magnam
             aliquam.
           </span>
-          <FaQuoteRight className="absolute -right-1 bottom-0 text-[#1874C1]/20 text-2xl sm:text-3xl transform transition-all duration-300 group-hover:scale-110 group-hover:text-[#1874C1]/30" />
+          <FaQuoteRight className="absolute -right-1 bottom-0 text-[#027cc2]/20 text-2xl sm:text-3xl transform transition-all duration-300 group-hover:scale-110 group-hover:text-[#027cc2]/30" />
         </blockquote>
 
       
-          <hr className="border-gray-200 border-[1.4px] transition-all duration-500 hover:border-[#1874C1]/30" />
+          <hr className="border-gray-200 border-[1.4px] transition-all duration-500 hover:border-[#027cc2]/30" />
          
 
         {/* CTA Text with animations */}
         <div className="text-center group cursor-pointer">
           <button onClick={()=>router.push('/contact')} className="text-sm sm:text-lg md:text-xl tracking-[0.2em] text-[#2A2A2A] flex items-center justify-center gap-2 sm:gap-3 cursor-pointer">
-            <span className="text-[#1874C1] font-semibold md:font-bold relative inline-block">
+            <span className="text-[#027cc2] font-semibold md:font-bold relative inline-block">
               JOIN US
-              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#1874C1] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#027cc2] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </span>
-            <span className="w-1 h-1 bg-[#1874C1] rounded-full animate-pulse"></span>
+            <span className="w-1 h-1 bg-[#027cc2] rounded-full animate-pulse"></span>
             <span className="relative text-xs">
               WE COVER THE WHOLE WORLD
-              <MdLocationOn className="absolute -right-5 top-1/2 -translate-y-1/2 text-[#1874C1] text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+              <MdLocationOn className="absolute -right-5 top-1/2 -translate-y-1/2 text-[#027cc2] text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
             </span>
           </button>
 
           {/* Animated underline */}
           <div className="flex justify-center mt-2">
-            <div className="w-12 h-0.5 bg-linear-to-r from-transparent via-[#1874C1] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+            <div className="w-12 h-0.5 bg-linear-to-r from-transparent via-[#027cc2] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           </div>
         </div>
 

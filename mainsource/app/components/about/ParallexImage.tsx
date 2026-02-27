@@ -95,10 +95,10 @@ const ParallexImage = () => {
                 {/* Icon Container with hover animations */}
                 <div className="relative">
                   {/* Glow effect behind icon */}
-                  <div className="absolute inset-0 bg-[#1874c1]/20 rounded-full blur-xl scale-0 group-hover:scale-150 transition-transform duration-500 opacity-0 group-hover:opacity-100"></div>
+                  <div className="absolute inset-0 bg-[#027cc2]/20 rounded-full blur-xl scale-0 group-hover:scale-150 transition-transform duration-500 opacity-0 group-hover:opacity-100"></div>
                   
                   {/* Icon */}
-                  <div className="relative text-4xl sm:text-5xl md:text-6xl text-white transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:text-[#1874c1]">
+                  <div className="relative text-4xl sm:text-5xl md:text-6xl text-white transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:text-[#027cc2]">
                     {item.icon}
                   </div>
                 </div>
@@ -109,7 +109,7 @@ const ParallexImage = () => {
                 </h3>
 
                 {/* Animated bottom line */}
-                <div className="w-0 group-hover:w-12 h-0.5 bg-[#1874c1] transition-all duration-500"></div>
+                <div className="w-0 group-hover:w-12 h-0.5 bg-[#027cc2] transition-all duration-500"></div>
               </div>
             ))}
           </div>

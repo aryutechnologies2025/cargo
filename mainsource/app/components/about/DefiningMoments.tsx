@@ -48,7 +48,7 @@
 //             {services.map((service, index) => (
 //               <div key={index} className="space-y-3">
 //                 <div className="flex items-center gap-4">
-//                   <span className="text-xl text-[#1874C1]">{service.icon}</span>
+//                   <span className="text-xl text-[#027cc2]">{service.icon}</span>
 //                   <h4 className=" font-semibold text-[#2A2A2A] tracking-tight">
 //                     {service.title}
 //                   </h4>
@@ -108,9 +108,9 @@ export const DefiningMoments = () => {
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2A2A2A] leading-tight">
               Defining{" "}
-              <span className="text-[#1874c1] relative inline-block">
+              <span className="text-[#027cc2] relative inline-block">
                 Moments
-                <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-[#1874c1] to-transparent"></div>
+                <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-[#027cc2] to-transparent"></div>
               </span>
             </h2>
 
@@ -121,7 +121,7 @@ export const DefiningMoments = () => {
 
             {/* Button with hover animation */}
             <div className="pt-2 sm:pt-3 lg:pt-4">
-              <button className="group relative bg-[#1b75bb] text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-medium hover:bg-[#1874c1] transition-all duration-300 uppercase rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer">
+              <button className="group relative bg-[#1b75bb] text-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-medium hover:bg-[#027cc2] transition-all duration-300 uppercase rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer">
                 <span className="relative z-10 flex items-center gap-2">
                   Read More
                   <MdArrowForward className="text-sm transition-transform duration-300 group-hover:translate-x-1" />
@@ -149,14 +149,14 @@ export const DefiningMoments = () => {
                   {/* Icon with animated background */}
                   <div className="relative">
                     <div className="absolute inset-0 bg-linear-to-r ${service.color} rounded-lg blur-md scale-0 group-hover:scale-150 transition-transform duration-500 opacity-0 group-hover:opacity-100"></div>
-                    <div className="relative p-2 sm:p-3 bg-[#1874c1]/10 rounded-lg group-hover:bg-[#1874c1] transition-colors duration-300">
-                      <span className="text-lg sm:text-xl text-[#1874c1] group-hover:text-white transition-colors duration-300 transform group-hover:scale-110 group-hover:rotate-3 inline-block">
+                    <div className="relative p-2 sm:p-3 bg-[#027cc2]/10 rounded-lg group-hover:bg-[#027cc2] transition-colors duration-300">
+                      <span className="text-lg sm:text-xl text-[#027cc2] group-hover:text-white transition-colors duration-300 transform group-hover:scale-110 group-hover:rotate-3 inline-block">
                         {service.icon}
                       </span>
                     </div>
                   </div>
 
-                  <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#2A2A2A] group-hover:text-[#1874c1] transition-colors duration-300">
+                  <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#2A2A2A] group-hover:text-[#027cc2] transition-colors duration-300">
                     {service.title}
                   </h4>
                 </div>
@@ -166,7 +166,7 @@ export const DefiningMoments = () => {
                 </p>
 
                 {/* Animated bottom line */}
-                <div className="w-0 group-hover:w-12 h-0.5 bg-[#1874c1] transition-all duration-500 ml-12 sm:ml-14"></div>
+                <div className="w-0 group-hover:w-12 h-0.5 bg-[#027cc2] transition-all duration-500 ml-12 sm:ml-14"></div>
               </div>
             ))}
           </div>

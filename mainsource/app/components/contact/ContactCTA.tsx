@@ -20,7 +20,7 @@ const ContactCTA = () => {
       <div className="flex flex-col lg:flex-row">
         {/* Left CTA - Customer Service */}
         <div
-          className={`bg-[#1874c1] w-full lg:flex-1 text-white p-8 sm:p-12 md:p-16 lg:p-20 xl:p-26 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 transform transition-all duration-700 `}
+          className={`bg-[#027cc2] w-full lg:flex-1 text-white p-8 sm:p-12 md:p-16 lg:p-20 xl:p-26 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 transform transition-all duration-700 `}
         >
           {/* Icon with animation */}
           <div className="relative group">

@@ -31,7 +31,7 @@
 //           <h4 className="font-bold text-base mb-5 uppercase text-[#2A2A2A] tracking-wider">
 //             Student Relations
 //           </h4>
-//           <p className="text-[#777777] mb-3">Mail:  <span className="text-[#1874C1]"> submissions@domain.com </span></p>
+//           <p className="text-[#777777] mb-3">Mail:  <span className="text-[#027cc2]"> submissions@domain.com </span></p>
 //           <p className="text-[#777777] mb-3">Phone: (012) 1234 789 456</p>
 //           <p className="text-[#777777] mb-3">Fax: 1.245.789.654</p>
 //         </div>
@@ -39,7 +39,7 @@
 //           <h4 className="font-bold text-base mb-5 uppercase text-[#2A2A2A] tracking-wider">
 //             Business Development  
 //           </h4>
-//           <p className="text-[#777777] mb-3">Mail:  <span className="text-[#1874C1]"> submissions@domain.com </span></p>
+//           <p className="text-[#777777] mb-3">Mail:  <span className="text-[#027cc2]"> submissions@domain.com </span></p>
 //           <p className="text-[#777777] mb-3">Phone: (012) 1234 789 456</p>
 //           <p className="text-[#777777] mb-3">Fax: 1.245.789.654</p>
 //         </div>
@@ -92,7 +92,7 @@ const TopInfoBar = () => {
         <>
           <p className="text-[#777777] mb-3 flex items-center gap-2">
             <MdEmail className="text-xs opacity-50" />
-            Mail: <span className="text-[#1874C1] hover:underline transition-all duration-300 cursor-pointer"> submissions@domain.com </span>
+            Mail: <span className="text-[#027cc2] hover:underline transition-all duration-300 cursor-pointer"> submissions@domain.com </span>
           </p>
           <p className="text-[#777777] mb-3 flex items-center gap-2">
             <MdPhone className="text-xs opacity-50" />
@@ -112,7 +112,7 @@ const TopInfoBar = () => {
         <>
           <p className="text-[#777777] mb-3 flex items-center gap-2">
             <MdEmail className="text-xs opacity-50" />
-            Mail: <span className="text-[#1874C1] hover:underline transition-all duration-300 cursor-pointer"> submissions@domain.com </span>
+            Mail: <span className="text-[#027cc2] hover:underline transition-all duration-300 cursor-pointer"> submissions@domain.com </span>
           </p>
           <p className="text-[#777777] mb-3 flex items-center gap-2">
             <MdPhone className="text-xs opacity-50" />
@@ -142,13 +142,13 @@ const TopInfoBar = () => {
               {/* Header with Icon */}
               <div className="flex items-center gap-3 mb-3 sm:mb-4 md:mb-5">
                 <div className="relative">
-                  <div className="p-2 rounded-lg bg-[#1874C1]/15 group-hover:bg-[#1874C1]/10 transition-all duration-300">
-                    <IconComponent className="text-[#1874C1] text-xl sm:text-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3" />
+                  <div className="p-2 rounded-lg bg-[#027cc2]/15 group-hover:bg-[#027cc2]/10 transition-all duration-300">
+                    <IconComponent className="text-[#027cc2] text-xl sm:text-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3" />
                   </div>
                   {/* Glow effect */}
-                  <div className="absolute inset-0 bg-[#1874C1]/20 rounded-lg blur-md scale-0 group-hover:scale-150 transition-transform duration-300 opacity-0 group-hover:opacity-100 -z-10" />
+                  <div className="absolute inset-0 bg-[#027cc2]/20 rounded-lg blur-md scale-0 group-hover:scale-150 transition-transform duration-300 opacity-0 group-hover:opacity-100 -z-10" />
                 </div>
-                <h4 className="font-bold text-sm sm:text-base text-[#2A2A2A] uppercase tracking-wider transition-all duration-300 group-hover:text-[#1874C1]">
+                <h4 className="font-bold text-sm sm:text-base text-[#2A2A2A] uppercase tracking-wider transition-all duration-300 group-hover:text-[#027cc2]">
                   {section.title}
                 </h4>
               </div>
@@ -158,7 +158,7 @@ const TopInfoBar = () => {
                 {section.content}
 
                 {/* Subtle bottom border animation */}
-                <div className="w-0 group-hover:w-12 h-0.5 bg-[#1874C1] mt-3 sm:mt-4 transition-all duration-500" />
+                <div className="w-0 group-hover:w-12 h-0.5 bg-[#027cc2] mt-3 sm:mt-4 transition-all duration-500" />
               </div>
             </div>
           );

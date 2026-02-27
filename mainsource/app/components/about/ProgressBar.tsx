@@ -36,7 +36,7 @@
 //             strokeDasharray={circumference}
 //             strokeDashoffset={strokeDashoffset}
 //             strokeLinecap="round"
-//             className="text-[#1874c1]"
+//             className="text-[#027cc2]"
 //           />
 //         </svg>
 //         <span className="absolute text-4xl  text-gray-400">{percentage}%</span>
@@ -143,14 +143,14 @@ const ProgressBarComponent = () => {
             text={`${percentages.one}%`}
             styles={buildStyles({
               textSize: '16px',
-              pathColor: '#1874c1',
+              pathColor: '#027cc2',
               textColor: '#2A2A2A',
               trailColor: '#e5e7eb',
               pathTransition: 'stroke-dashoffset 1.5s ease-out',
             })}
           />
         </div>
-        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-semibold tracking-wider text-[#2A2A2A] group-hover:text-[#1874c1] transition-colors duration-300">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-semibold tracking-wider text-[#2A2A2A] group-hover:text-[#027cc2] transition-colors duration-300">
           Increase In Customers
         </p>
       </div>
@@ -163,14 +163,14 @@ const ProgressBarComponent = () => {
             text={`${percentages.two}%`}
             styles={buildStyles({
               textSize: '16px',
-              pathColor: '#1874c1',
+              pathColor: '#027cc2',
               textColor: '#2A2A2A',
               trailColor: '#e5e7eb',
               pathTransition: 'stroke-dashoffset 1.5s ease-out',
             })}
           />
         </div>
-        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-semibold tracking-wider text-[#2A2A2A] group-hover:text-[#1874c1] transition-colors duration-300">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-semibold tracking-wider text-[#2A2A2A] group-hover:text-[#027cc2] transition-colors duration-300">
           Satisfied Employees
         </p>
       </div>
@@ -183,14 +183,14 @@ const ProgressBarComponent = () => {
             text={`${percentages.three}%`}
             styles={buildStyles({
               textSize: '16px',
-              pathColor: '#1874c1',
+              pathColor: '#027cc2',
               textColor: '#2A2A2A',
               trailColor: '#e5e7eb',
               pathTransition: 'stroke-dashoffset 1.5s ease-out',
             })}
           />
         </div>
-        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-semibold tracking-wider text-[#2A2A2A] group-hover:text-[#1874c1] transition-colors duration-300">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-semibold tracking-wider text-[#2A2A2A] group-hover:text-[#027cc2] transition-colors duration-300">
           Shareholders ROI
         </p>
       </div>
@@ -205,7 +205,7 @@ const ProgressBarComponent = () => {
             venenatis dignissim urna. Duis sit amet eros a sem viverra mollis nec
             eu sem. Quisque rutporta sed diam id.
           </p>
-          <span className="absolute -left-2 -top-2 text-[#1874c1]/10 text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">"</span>
+          <span className="absolute -left-2 -top-2 text-[#027cc2]/10 text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">"</span>
         </div>
         
           <p className="hover:text-[#4A4A4A] transition-colors duration-300">

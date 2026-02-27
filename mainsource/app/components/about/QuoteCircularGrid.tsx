@@ -32,7 +32,7 @@
 //           <div className="grid grid-cols-2 gap-1 w-80 h-80 md:w-[550px] md:h-[550px] rounded-full overflow-hidden ">
 //             {/* Top Left: Blue Icon */}
 //             <div
-//               className="bg-[#1874c1] flex flex-col justify-center p-2
+//               className="bg-[#027cc2] flex flex-col justify-center p-2
 //              text-center text-white"
 //             >
 //               <div className=" flex justify-end items-end">
@@ -65,7 +65,7 @@
 //             </div>
 
 //             {/* Bottom Right: Blue Icon */}
-//             <div className="bg-[#1874c1] flex flex-col  justify-center p-2 text-center text-white">
+//             <div className="bg-[#027cc2] flex flex-col  justify-center p-2 text-center text-white">
 //               {/* <div className=" flex justify-end items-end"> */}
 //               <RiSafe2Fill className="text-white text-5xl" />
 //               {/* </div> */}
@@ -105,16 +105,16 @@ const QuoteCircularGrid = () => {
           <div className={`w-full transform transition-all duration-700 `}>
             {/* Decorative quote mark */}
             <div className="relative mb-4">
-              <MdFormatQuote className="text-6xl text-[#1874c1]/20" />
+              <MdFormatQuote className="text-6xl text-[#027cc2]/20" />
             </div>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl text-[#2A2A2A] leading-snug mb-3 sm:mb-4 font-light">
-              <span className="font-bold text-[#1874c1]">The line</span> between
+              <span className="font-bold text-[#027cc2]">The line</span> between
               disorder and order lies in logistics....
             </h2>
 
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
-              <div className="w-8 h-0.5 bg-[#1874c1] rounded-full"></div>
+              <div className="w-8 h-0.5 bg-[#027cc2] rounded-full"></div>
               <p className="font-bold text-base sm:text-lg text-[#2F3436]">
                SUN TZU
               </p>
@@ -130,31 +130,31 @@ const QuoteCircularGrid = () => {
             {/* Stats or additional info (optional) */}
             <div className="flex gap-4 sm:gap-6 mt-6 sm:mt-8">
               <div className="text-center group">
-                <div className="text-xl sm:text-2xl font-bold text-[#1874c1]">
+                <div className="text-xl sm:text-2xl font-bold text-[#027cc2]">
                   15+
                 </div>
                 <div className="text-[10px] sm:text-xs text-[#777777]">
                   Years Experience
                 </div>
-                <div className="w-0 group-hover:w-full h-0.5 bg-[#1874c1] mx-auto transition-all duration-300"></div>
+                <div className="w-0 group-hover:w-full h-0.5 bg-[#027cc2] mx-auto transition-all duration-300"></div>
               </div>
               <div className="text-center group">
-                <div className="text-xl sm:text-2xl font-bold text-[#1874c1]">
+                <div className="text-xl sm:text-2xl font-bold text-[#027cc2]">
                   50K+
                 </div>
                 <div className="text-[10px] sm:text-xs text-[#777777]">
                   Happy Clients
                 </div>
-                <div className="w-0 group-hover:w-full h-0.5 bg-[#1874c1] mx-auto transition-all duration-300"></div>
+                <div className="w-0 group-hover:w-full h-0.5 bg-[#027cc2] mx-auto transition-all duration-300"></div>
               </div>
               <div className="text-center group">
-                <div className="text-xl sm:text-2xl font-bold text-[#1874c1]">
+                <div className="text-xl sm:text-2xl font-bold text-[#027cc2]">
                   100+
                 </div>
                 <div className="text-[10px] sm:text-xs text-[#777777]">
                   Countries
                 </div>
-                <div className="w-0 group-hover:w-full h-0.5 bg-[#1874c1] mx-auto transition-all duration-300"></div>
+                <div className="w-0 group-hover:w-full h-0.5 bg-[#027cc2] mx-auto transition-all duration-300"></div>
               </div>
             </div>
           </div>
@@ -168,7 +168,7 @@ const QuoteCircularGrid = () => {
               {/* Main circular grid */}
               <div className="grid grid-cols-2 gap-1 w-full h-full rounded-full overflow-hidden  ">
                 {/* Top Left: Blue Icon */}
-                <div className="bg-[#1874c1] flex flex-col justify-center p-2 sm:p-3 md:p-4 text-center text-white group hover:bg-[#1565a0] transition-all duration-500 hover:scale-105 origin-bottom-right">
+                <div className="bg-[#027cc2] flex flex-col justify-center p-2 sm:p-3 md:p-4 text-center text-white group hover:bg-[#1565a0] transition-all duration-500 hover:scale-105 origin-bottom-right">
                   <div className="flex justify-end items-end mb-1 sm:mb-2">
                     <FaComputer className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300" />
                   </div>
@@ -199,7 +199,7 @@ const QuoteCircularGrid = () => {
                 </div>
 
                 {/* Bottom Right: Blue Icon */}
-                <div className="bg-[#1874c1] flex flex-col justify-center p-2 sm:p-3 md:p-4 text-center text-white group hover:bg-[#1565a0] transition-all duration-500 hover:scale-105 origin-top-left">
+                <div className="bg-[#027cc2] flex flex-col justify-center p-2 sm:p-3 md:p-4 text-center text-white group hover:bg-[#1565a0] transition-all duration-500 hover:scale-105 origin-top-left">
                   <div className="flex justify-start items-start mb-1 sm:mb-2">
                     <RiSafe2Fill className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl transform group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300" />
                   </div>
