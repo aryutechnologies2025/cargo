@@ -9,8 +9,8 @@ const page = () => {
     <div >
       <TopInfoBar />
       <ContactForm />
-      <GoogleMap />
-      <CTA/>
+      {/* <GoogleMap /> */}
+      {/* <CTA/> */}
     </div>
   );
 };

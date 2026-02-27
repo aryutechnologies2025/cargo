@@ -238,9 +238,7 @@ const FranchiseeSection = () => {
                     </div>
                     
                     {/* Icon Badge */}
-                    <div className="absolute -bottom-2 -right-2 bg-[#fdc300] rounded-full p-1.5 shadow-lg">
-                      <FiAward className="w-4 h-4 text-white" />
-                    </div>
+                   
                   </div>
 
                   {/* Content */}
