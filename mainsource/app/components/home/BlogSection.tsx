@@ -261,7 +261,7 @@ const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => (
 
 export default function BlogSection() {
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-32 py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

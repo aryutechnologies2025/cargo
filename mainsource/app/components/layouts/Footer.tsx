@@ -150,6 +150,7 @@ import {
   FaEnvelope,
   FaClock
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const quickLinks = [
@@ -171,7 +172,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: FaFacebookF, href: "https://www.facebook.com/people/CARGO-LORD-LTD/100068334092103/#", label: "Facebook" },
-    { icon: FaTwitter, href: "https://x.com/cargolordltd", label: "Twitter" },
+    { icon: FaXTwitter, href: "https://x.com/cargolordltd", label: "Twitter" },
     { icon: FaLinkedinIn, href: "https://www.linkedin.com/company/cargo-lord-ltd", label: "LinkedIn" },
   ];
 
@@ -181,9 +182,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white border-t border-gray-200">
+    <footer className="w-full bg-white border-t border-gray-200 px-5 sm:px-7 md:px-16 lg:px-32 ">
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+      <div className="mx-auto py-12 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           
           {/* CEO's Statement Section */}
@@ -334,8 +335,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom footer with copyright and links */}
-      <div className=" ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="mx-auto  py-6">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4 text-sm">
             {/* Copyright */}
             <p className="/90 text-center lg:text-left">
@@ -379,7 +379,6 @@ const Footer = () => {
 
           
         </div>
-      </div>
     </footer>
   );
 };

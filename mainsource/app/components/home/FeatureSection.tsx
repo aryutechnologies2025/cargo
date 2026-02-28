@@ -156,26 +156,12 @@ const FeaturesSection = () => {
     }
   };
 
-  const statVariants: Variants = {
-    hidden: { 
-      scale: 0.8, 
-      opacity: 0 
-    },
-    visible: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 20
-      }
-    }
-  };
+ 
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#f7f7f7] to-white overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-[#f7f7f7] to-white overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
       {/* Section Header */}
-      <div className="px-5 sm:px-7 md:px-16 lg:px-32 pt-12 sm:pt-16 md:pt-20 text-center">
+      <div className=" text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -202,9 +188,9 @@ const FeaturesSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="px-5 sm:px-7 md:px-16 lg:px-32 py-8 sm:py-12 md:py-16"
+  
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-10">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -253,25 +239,7 @@ const FeaturesSection = () => {
         </div>
       </motion.div>
 
-      {/* Stats Section */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.1,
-              delayChildren: 0.2
-            }
-          }
-        }}
-        className="px-5 sm:px-7 md:px-16 lg:px-32 pb-12 sm:pb-16 md:pb-20"
-      >
-    
-      </motion.div>
+      
 
     
 

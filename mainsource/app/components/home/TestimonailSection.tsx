@@ -441,7 +441,7 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden  py-5 sm:py-9 md:py-14">
       {/* Section Header */}
       <motion.div
         initial="hidden"

@@ -281,7 +281,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-1">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href='/' className="relative z-50">
+            <Link href='/'>
               <Image
                 src="/icons/logo.png"
                 alt="Cargo Logistics"

@@ -74,22 +74,19 @@
 
 // export default Hero;
 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 // 'use client'
 // import { useState, useEffect } from "react";
 // import Image from "next/image";
 // import { useRouter } from "next/navigation";
 // import { motion, AnimatePresence } from "framer-motion";
-// import { 
-//   FiPackage, 
-//   FiTruck, 
-//   FiClock, 
-//   FiShield, 
-//   FiArrowRight, 
+// import {
+//   FiPackage,
+//   FiTruck,
+//   FiClock,
+//   FiShield,
+//   FiArrowRight,
 //   FiHelpCircle,
 //   FiMapPin,
 //   FiGlobe,
@@ -105,7 +102,7 @@
 //   const [currentSlide, setCurrentSlide] = useState(0);
 //   const [imagesLoaded, setImagesLoaded] = useState(false);
 //   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
-  
+
 //   const slides = [
 //     { image: "/images/hero-bg-1.jpg", alt: "Logistics background 1" },
 //     { image: "/images/hero-bg-2.jpg", alt: "Logistics background 2" },
@@ -138,7 +135,7 @@
 //   useEffect(() => {
 //     // Only start auto-sliding after images are loaded
 //     if (!imagesLoaded) return;
-    
+
 //     const timer = setInterval(() => {
 //       setCurrentSlide((prev) => (prev + 1) % slides.length);
 //     }, 6000);
@@ -221,13 +218,13 @@
 //             />
 //           </motion.div>
 //         </AnimatePresence>
-        
+
 //         {/* Only dark overlay for better text visibility - no blue gradient */}
 //         <div className="absolute inset-0 bg-black/30"></div>
 //       </div>
 
 //       {/* Smooth Progress Bar for Slide Indicator */}
-//       <motion.div 
+//       <motion.div
 //         className="absolute top-0 left-0 right-0 h-1 bg-white/20 z-30"
 //         initial={{ scaleX: 0 }}
 //         animate={{ scaleX: 1 }}
@@ -275,16 +272,16 @@
 //               <FiGlobe className="w-4 h-4" />
 //               <span className="text-sm font-medium tracking-wide">Global Logistics Partner</span>
 //             </motion.div>
-            
-//             <motion.h1 
+
+//             <motion.h1
 //               variants={slideUp}
 //               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
 //             >
 //               Seamless
 //               <span className="block text-white/95">Parcel Delivery</span>
 //             </motion.h1>
-            
-//             <motion.p 
+
+//             <motion.p
 //               variants={slideUp}
 //               className="text-lg text-white/90 mb-8 max-w-lg leading-relaxed"
 //             >
@@ -292,7 +289,7 @@
 //             </motion.p>
 
 //             {/* Features with better contrast */}
-//             <motion.div 
+//             <motion.div
 //               variants={slideUp}
 //               className="grid grid-cols-3 gap-4"
 //             >
@@ -301,8 +298,8 @@
 //                 { icon: FiShield, label: "Secure", value: "Handling" },
 //                 { icon: FiClock, label: "Fast", value: "Delivery" }
 //               ].map((item, index) => (
-//                 <motion.div 
-//                   key={index} 
+//                 <motion.div
+//                   key={index}
 //                   className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm p-3 rounded-xl border border-white/10"
 //                   whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
 //                   transition={{ duration: 0.2 }}
@@ -323,16 +320,16 @@
 //             className="relative"
 //           >
 //             {/* Decorative Elements */}
-//             <motion.div 
+//             <motion.div
 //               className="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"
 //               animate={{ scale: [1, 1.2, 1] }}
 //               transition={{ duration: 4, repeat: Infinity }}
 //             />
-            
+
 //             <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-white/20">
 //               {/* Card Header */}
 //               <div className="bg-gradient-to-r from-[#057dc3] to-[#0469a5] p-6">
-//                 <motion.div 
+//                 <motion.div
 //                   className="flex items-center space-x-3"
 //                   initial={{ x: -20, opacity: 0 }}
 //                   animate={{ x: 0, opacity: 1 }}
@@ -341,7 +338,7 @@
 //                   <BsBoxSeam className="w-6 h-6 text-white" />
 //                   <h2 className="text-white font-semibold text-lg">Track Your Shipment</h2>
 //                 </motion.div>
-//                 <motion.p 
+//                 <motion.p
 //                   className="text-white/80 text-sm mt-1"
 //                   initial={{ opacity: 0 }}
 //                   animate={{ opacity: 1 }}
@@ -353,7 +350,7 @@
 
 //               {/* Card Body */}
 //               <div className="p-6">
-//                 <motion.div 
+//                 <motion.div
 //                   className="space-y-4"
 //                   initial="initial"
 //                   animate="animate"
@@ -368,9 +365,9 @@
 //                       onKeyPress={(e) => e.key === 'Enter' && handleTrack()}
 //                       className="w-full px-4 py-4 border-2 border-gray-100 rounded-xl focus:border-[#057dc3] focus:ring-4 focus:ring-[#057dc3]/10 outline-none transition-all text-gray-800 bg-white"
 //                     />
-                    
+
 //                     {/* Floating label effect on focus */}
-//                     <motion.span 
+//                     <motion.span
 //                       className="absolute left-4 -top-2 px-2 text-xs text-[#057dc3] bg-white rounded"
 //                       initial={{ opacity: 0, y: 5 }}
 //                       animate={{ opacity: trackingNumber ? 1 : 0, y: trackingNumber ? 0 : 5 }}
@@ -391,7 +388,7 @@
 //                   </motion.button>
 
 //                   {/* Quick Links */}
-//                   <motion.div 
+//                   <motion.div
 //                     variants={slideUp}
 //                     className="flex items-center justify-between pt-4"
 //                   >
@@ -399,7 +396,7 @@
 //                       <FiHelpCircle className="w-4 h-4 group-hover:rotate-12 transition-transform" />
 //                       <span>Need help?</span>
 //                     </button>
-                    
+
 //                     <div className="flex items-center space-x-4">
 //                       <span className="text-xs text-gray-400">Quick track:</span>
 //                       {['12345', 'ABC123', 'XYZ789'].map((num, i) => (
@@ -418,7 +415,7 @@
 //                 </motion.div>
 
 //                 {/* Stats */}
-//                 <motion.div 
+//                 <motion.div
 //                   variants={slideUp}
 //                   className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-100"
 //                 >
@@ -427,8 +424,8 @@
 //                     { value: "99.9%", label: "Success Rate", icon: FiTrendingUp },
 //                     { value: "24/7", label: "Support", icon: FiClock }
 //                   ].map((stat, index) => (
-//                     <motion.div 
-//                       key={index} 
+//                     <motion.div
+//                       key={index}
 //                       className="text-center"
 //                       whileHover={{ y: -3 }}
 //                       transition={{ duration: 0.2 }}
@@ -441,7 +438,7 @@
 //                 </motion.div>
 
 //                 {/* Additional Info */}
-//                 <motion.div 
+//                 <motion.div
 //                   variants={slideUp}
 //                   className="mt-4 text-center"
 //                 >
@@ -481,25 +478,19 @@
 
 // export default Hero;
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
 
 // 'use client'
 // import { useState, useRef } from "react";
 // import Image from "next/image";
 // import { useRouter } from "next/navigation";
 // import { motion } from "framer-motion";
-// import { 
-//   FiPackage, 
-//   FiTruck, 
-//   FiClock, 
-//   FiShield, 
-//   FiArrowRight, 
+// import {
+//   FiPackage,
+//   FiTruck,
+//   FiClock,
+//   FiShield,
+//   FiArrowRight,
 //   FiHelpCircle,
 //   FiMapPin,
 //   FiGlobe,
@@ -524,13 +515,13 @@
 //   const router = useRouter();
 //   const [trackingNumber, setTrackingNumber] = useState("");
 //   const swiperRef = useRef<SwiperType | null>(null);
-  
+
 //   const slides = [
 //     { image: "/images/hero-bg-1.jpg", alt: "Logistics background 1" },
 //     { image: "/images/hero-bg-2.jpg", alt: "Logistics background 2" },
 //     { image: "/images/hero-bg-3.jpg", alt: "Logistics background 3" },
 //     { image: "/images/hero-bg-4.jpg", alt: "Logistics background 4" },
-   
+
 //   ];
 
 //   const handleTrack = () => {
@@ -598,16 +589,10 @@
 //             </SwiperSlide>
 //           ))}
 //         </Swiper>
-        
+
 //         {/* Dark overlay for better text visibility */}
 //         <div className="absolute inset-0 bg-black/30 z-10"></div>
 //       </div>
-
-      
-
-     
-
-     
 
 //       {/* Main Content */}
 //       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -627,8 +612,8 @@
 //               <FiGlobe className="w-4 h-4 filter drop-shadow-md" />
 //               <span className="text-sm font-medium tracking-wide">Global Logistics Partner</span>
 //             </motion.div>
-            
-//             <motion.h1 
+
+//             <motion.h1
 //               variants={slideUp}
 //               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
 //               style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5), 4px 4px 8px rgba(0,0,0,0.3)' }}
@@ -636,8 +621,8 @@
 //               Seamless
 //               <span className="block text-white/95">Parcel Delivery</span>
 //             </motion.h1>
-            
-//             <motion.p 
+
+//             <motion.p
 //               variants={slideUp}
 //               className="text-lg text-white/90 mb-8 max-w-lg leading-relaxed"
 //               style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.4)' }}
@@ -646,7 +631,7 @@
 //             </motion.p>
 
 //             {/* Features with text shadow */}
-//             <motion.div 
+//             <motion.div
 //               variants={slideUp}
 //               className="grid grid-cols-3 gap-4"
 //             >
@@ -655,8 +640,8 @@
 //                 { icon: FiShield, label: "Secure", value: "Handling" },
 //                 { icon: FiClock, label: "Fast", value: "Delivery" }
 //               ].map((item, index) => (
-//                 <motion.div 
-//                   key={index} 
+//                 <motion.div
+//                   key={index}
 //                   className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm p-3 rounded-xl border border-white/10"
 //                   whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
 //                   transition={{ duration: 0.2 }}
@@ -678,16 +663,16 @@
 //             className="relative"
 //           >
 //             {/* Decorative Elements */}
-//             <motion.div 
+//             <motion.div
 //               className="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"
 //               animate={{ scale: [1, 1.2, 1] }}
 //               transition={{ duration: 4, repeat: Infinity }}
 //             />
-            
+
 //             <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden ">
 //               {/* Card Header */}
 //               <div className="bg-gradient-to-r from-[#057dc3] to-[#0469a5] p-6">
-//                 <motion.div 
+//                 <motion.div
 //                   className="flex items-center space-x-3"
 //                   initial={{ x: -20, opacity: 0 }}
 //                   animate={{ x: 0, opacity: 1 }}
@@ -696,7 +681,7 @@
 //                   <BsBoxSeam className="w-6 h-6 text-white filter drop-shadow-md" />
 //                   <h2 className="text-white font-semibold text-lg" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>Track Your Shipment</h2>
 //                 </motion.div>
-//                 <motion.p 
+//                 <motion.p
 //                   className="text-white/80 text-sm mt-1"
 //                   initial={{ opacity: 0 }}
 //                   animate={{ opacity: 1 }}
@@ -709,7 +694,7 @@
 
 //               {/* Card Body */}
 //               <div className="p-6">
-//                 <motion.div 
+//                 <motion.div
 //                   className="space-y-4"
 //                   initial="initial"
 //                   animate="animate"
@@ -724,9 +709,9 @@
 //                       onKeyDown={(e) => e.key === 'Enter' && handleTrack()}
 //                       className="w-full px-4 py-4 border-2 border-gray-100 rounded-xl focus:border-[#057dc3] focus:ring-4 focus:ring-[#057dc3]/10 outline-none transition-all text-gray-800 bg-white"
 //                     />
-                    
+
 //                     {/* Floating label */}
-//                     <motion.span 
+//                     <motion.span
 //                       className="absolute left-4 -top-2 px-2 text-xs text-[#057dc3] bg-white rounded"
 //                       initial={{ opacity: 0, y: 5 }}
 //                       animate={{ opacity: trackingNumber ? 1 : 0, y: trackingNumber ? 0 : 5 }}
@@ -746,11 +731,10 @@
 //                     <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
 //                   </motion.button>
 
-                 
 //                 </motion.div>
 
 //                 {/* Stats */}
-//                 <motion.div 
+//                 <motion.div
 //                   variants={slideUp}
 //                   className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-100"
 //                 >
@@ -759,8 +743,8 @@
 //                     { value: "99.9%", label: "Success Rate", icon: FiTrendingUp },
 //                     { value: "24/7", label: "Support", icon: FiClock }
 //                   ].map((stat, index) => (
-//                     <motion.div 
-//                       key={index} 
+//                     <motion.div
+//                       key={index}
 //                       className="text-center"
 //                       whileHover={{ y: -3 }}
 //                       transition={{ duration: 0.2 }}
@@ -773,7 +757,7 @@
 //                 </motion.div>
 
 //                 {/* Additional Info */}
-//                 <motion.div 
+//                 <motion.div
 //                   variants={slideUp}
 //                   className="mt-4 text-center"
 //                 >
@@ -809,73 +793,53 @@
 
 // export default Hero;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'use client'
+"use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { 
-  FiPackage, 
-  FiTruck, 
-  FiClock, 
-  FiShield, 
-  FiArrowRight, 
+import {
+  FiPackage,
+  FiTruck,
+  FiClock,
+  FiShield,
+  FiArrowRight,
   FiHelpCircle,
   FiMapPin,
   FiGlobe,
   FiTrendingUp,
   FiChevronLeft,
-  FiChevronRight
+  FiChevronRight,
 } from "react-icons/fi";
 import { BsBoxSeam } from "react-icons/bs";
 
 // Import Swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Hero = () => {
   const router = useRouter();
   const [trackingNumber, setTrackingNumber] = useState("");
-  const [mounted, setMounted] = useState(false);
   const swiperRef = useRef<SwiperType | null>(null);
-  
+
   const slides = [
     { image: "/images/hero-bg-1.jpg", alt: "Logistics background 1" },
     { image: "/images/hero-bg-2.jpg", alt: "Logistics background 2" },
     { image: "/images/hero-bg-3.jpg", alt: "Logistics background 3" },
     { image: "/images/hero-bg-4.jpg", alt: "Logistics background 4" },
+    { image: "/images/hero-bg-5.jpg", alt: "Logistics background 4" },
+    { image: "/images/hero-bg-6.jpg", alt: "Logistics background 4" },
+    { image: "/images/hero-bg-7.jpg", alt: "Logistics background 4" },
+    { image: "/images/hero-bg-8.jpg", alt: "Logistics background 4" },
+    { image: "/images/hero-bg-9.jpg", alt: "Logistics background 4" },
   ];
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleTrack = () => {
     if (trackingNumber.trim()) {
@@ -887,31 +851,23 @@ const Hero = () => {
   const slideUp = {
     initial: { y: 20, opacity: 0 },
     animate: { y: 0, opacity: 1 },
-    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
   };
 
   const scaleIn = {
     initial: { scale: 0.95, opacity: 0 },
     animate: { scale: 1, opacity: 1 },
-    transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }
+    transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
-
-  if (!mounted) {
-    return (
-      <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#057dc3]">
-        <div className="absolute inset-0 bg-[#057dc3]"></div>
-      </section>
-    );
-  }
 
   return (
     <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden">
@@ -921,9 +877,9 @@ const Hero = () => {
           modules={[Autoplay, EffectFade, Navigation, Pagination]}
           effect="fade"
           fadeEffect={{ crossFade: true }}
-          speed={1000}
+          speed={3000}
           autoplay={{
-            delay: 4000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           loop={true}
@@ -950,13 +906,13 @@ const Hero = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        
+
         {/* Dark overlay for better text visibility - adjusted opacity for mobile */}
-        <div className="absolute inset-0 bg-black/40 sm:bg-black/35 md:bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-black/30 md:bg-black/20 z-10"></div>
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+      <div className="relative z-20 w-full  mx-auto px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -968,50 +924,78 @@ const Hero = () => {
             <motion.div
               variants={slideUp}
               className="text-white inline-flex items-center justify-center lg:justify-start space-x-2 bg-white/15 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 border border-white/10 mx-auto lg:mx-0"
-              style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
+              style={{ 
+  textShadow: `
+    0px 1px 2px rgba(0,0,0,0.3),
+    0px 2px 4px rgba(0,0,0,0.2),
+    0px 4px 8px rgba(0,0,0,0.1)
+  `
+}}
             >
-              <FiGlobe className="w-3 h-3 sm:w-4 sm:h-4 filter drop-shadow-md" />
-              <span className="text-xs sm:text-sm font-medium tracking-wide">Global Logistics Partner</span>
+              <FiGlobe className="w-3 h-3 sm:w-4 sm:h-4 filter drop-shadow-xl" />
+              <span className="text-xs sm:text-sm font-medium tracking-wide">
+                Global Logistics Partner
+              </span>
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               variants={slideUp}
               className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4"
-              style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
+             style={{ 
+  textShadow: `
+    0px 1px 2px rgba(0,0,0,0.3),
+    0px 2px 4px rgba(0,0,0,0.2),
+    0px 4px 8px rgba(0,0,0,0.1)
+  `
+}}
             >
               <span className="block">Seamless</span>
               <span className="block text-white/95 mt-1">Parcel Delivery</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={slideUp}
               className="text-sm sm:text-base md:text-lg text-white/90 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0"
-              style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.4)' }}
+              style={{ 
+  textShadow: `
+    0px 1px 2px rgba(0,0,0,0.3),
+    0px 2px 4px rgba(0,0,0,0.2),
+    0px 4px 8px rgba(0,0,0,0.1)
+  `
+}}
             >
-              Experience hassle-free shipping with real-time tracking, secure handling, and global coverage.
+              Experience hassle-free shipping with real-time tracking, secure
+              handling, and global coverage.
             </motion.p>
 
             {/* Features - Responsive grid */}
-            <motion.div 
+            <motion.div
               variants={slideUp}
               className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-md mx-auto lg:mx-0"
             >
               {[
                 { icon: FiTrendingUp, label: "Real-time", value: "Tracking" },
                 { icon: FiShield, label: "Secure", value: "Handling" },
-                { icon: FiClock, label: "Fast", value: "Delivery" }
+                { icon: FiClock, label: "Fast", value: "Delivery" },
               ].map((item, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-1 sm:space-y-0 sm:space-x-2 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-white/10"
-                  whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.15)" }}
+                  whileHover={{
+                    scale: 1.02,
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                  }}
                   transition={{ duration: 0.2 }}
-                  style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
+                  style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.4)" }}
                 >
                   <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white filter drop-shadow-md" />
                   <div className="text-center sm:text-left">
-                    <div className="text-xs sm:text-sm font-semibold text-white">{item.value}</div>
-                    <div className="text-[10px] sm:text-xs text-white/70 max-xs:hidden xs:block">{item.label}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white">
+                      {item.value}
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-white/70 max-xs:hidden xs:block">
+                      {item.label}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -1024,30 +1008,35 @@ const Hero = () => {
             className="relative mt-6 sm:mt-8 lg:mt-0"
           >
             {/* Decorative Elements - hidden on mobile */}
-            <motion.div 
+            <motion.div
               className="absolute -top-4 -right-4 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 bg-white/5 rounded-full blur-2xl max-sm:hidden sm:block"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
-            
+
             <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden mx-auto max-w-sm sm:max-w-md lg:max-w-none">
               {/* Card Header */}
               <div className="bg-gradient-to-r from-[#057dc3] to-[#0469a5] p-4 sm:p-5 md:p-6">
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-2 sm:space-x-3"
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
                   <BsBoxSeam className="w-5 h-5 sm:w-6 sm:h-6 text-white filter drop-shadow-md" />
-                  <h2 className="text-white font-semibold text-base sm:text-lg" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>Track Your Shipment</h2>
+                  <h2
+                    className="text-white font-semibold text-base sm:text-lg"
+                    style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.3)" }}
+                  >
+                    Track Your Shipment
+                  </h2>
                 </motion.div>
-                <motion.p 
+                <motion.p
                   className="text-white/80 text-xs sm:text-sm mt-1"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.2)' }}
+                  style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.2)" }}
                 >
                   Enter your tracking number below
                 </motion.p>
@@ -1055,7 +1044,7 @@ const Hero = () => {
 
               {/* Card Body */}
               <div className="p-4 sm:p-5 md:p-6">
-                <motion.div 
+                <motion.div
                   className="space-y-3 sm:space-y-4"
                   initial="initial"
                   animate="animate"
@@ -1067,15 +1056,18 @@ const Hero = () => {
                       placeholder="e.g., 12345, ABC123"
                       value={trackingNumber}
                       onChange={(e) => setTrackingNumber(e.target.value)}
-                      onKeyDown={(e) => e.key === 'Enter' && handleTrack()}
+                      onKeyDown={(e) => e.key === "Enter" && handleTrack()}
                       className="w-full px-3 sm:px-4 py-3 sm:py-4 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:border-[#057dc3] focus:ring-4 focus:ring-[#057dc3]/10 outline-none transition-all text-gray-800 bg-white text-sm sm:text-base"
                     />
-                    
+
                     {/* Floating label */}
-                    <motion.span 
+                    <motion.span
                       className="absolute left-3 sm:left-4 -top-2 px-1.5 sm:px-2 text-[10px] sm:text-xs text-[#057dc3] bg-white rounded"
                       initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: trackingNumber ? 1 : 0, y: trackingNumber ? 0 : 5 }}
+                      animate={{
+                        opacity: trackingNumber ? 1 : 0,
+                        y: trackingNumber ? 0 : 5,
+                      }}
                     >
                       Tracking Number
                     </motion.span>
@@ -1094,30 +1086,38 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Stats - Responsive grid */}
-                <motion.div 
+                <motion.div
                   variants={slideUp}
                   className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-100"
                 >
                   {[
                     { value: "15K+", label: "Daily Parcels", icon: FiPackage },
-                    { value: "99.9%", label: "Success Rate", icon: FiTrendingUp },
-                    { value: "24/7", label: "Support", icon: FiClock }
+                    {
+                      value: "99.9%",
+                      label: "Success Rate",
+                      icon: FiTrendingUp,
+                    },
+                    { value: "24/7", label: "Support", icon: FiClock },
                   ].map((stat, index) => (
-                    <motion.div 
-                      key={index} 
+                    <motion.div
+                      key={index}
                       className="text-center"
                       whileHover={{ y: -2 }}
                       transition={{ duration: 0.2 }}
                     >
                       <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#057dc3] mx-auto mb-1 sm:mb-2 filter drop-shadow-md" />
-                      <div className="text-sm sm:text-base md:text-lg font-bold text-[#057dc3]">{stat.value}</div>
-                      <div className="text-[10px] sm:text-xs text-gray-500">{stat.label}</div>
+                      <div className="text-sm sm:text-base md:text-lg font-bold text-[#057dc3]">
+                        {stat.value}
+                      </div>
+                      <div className="text-[10px] sm:text-xs text-gray-500">
+                        {stat.label}
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>
 
                 {/* Additional Info */}
-                <motion.div 
+                <motion.div
                   variants={slideUp}
                   className="mt-3 sm:mt-4 text-center"
                 >
@@ -1132,31 +1132,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Custom styles for better responsiveness */}
-      <style jsx global>{`
-        /* Extra small devices (phones, 320px and up) */
-        @media (min-width: 320px) {
-          .xs\\:block {
-            display: block;
-          }
-        }
-        
-     
-        
-        /* Text shadow utilities */
-        .text-shadow-sm {
-          text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        .text-shadow-md {
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .text-shadow-lg {
-          text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
-        }
-        .drop-shadow-custom {
-          filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-        }
-      `}</style>
+    
     </section>
   );
 };

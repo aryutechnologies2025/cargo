@@ -152,9 +152,9 @@ const StatsSection = () => {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
       {/* Section Header */}
-      <div className="px-5 sm:px-7 md:px-16 lg:px-32 pt-12 sm:pt-16 md:pt-20 text-center">
+      <div className=" text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -180,9 +180,9 @@ const StatsSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="px-5 sm:px-7 md:px-16 lg:px-32 py-8 sm:py-12 md:py-16"
+        
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-8 md:mt-12">
           {stats.map((stat, index) => (
             <motion.div
               key={index}

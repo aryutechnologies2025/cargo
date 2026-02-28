@@ -174,9 +174,9 @@ const FranchiseeSection = () => {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
       {/* Header Section */}
-      <div className="px-5 sm:px-7 md:px-16 lg:px-32 pt-12 sm:pt-16 md:pt-20 text-center">
+      <div className=" text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ const FranchiseeSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="px-5 sm:px-7 md:px-16 lg:px-32 py-8 sm:py-12 md:py-16"
+        className=" mt-8 md:mt-14"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
