@@ -636,6 +636,7 @@ const AboutPage = () => {
             fill
             className="object-cover"
             priority
+            unoptimized
           />
           <div className="absolute inset-0 bg-black/20 mix-blend-multiply" />
         </motion.div>
