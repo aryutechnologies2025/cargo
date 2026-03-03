@@ -87,7 +87,6 @@
 //         transition={{ duration: 0.6 }}
 //         className="text-center mb-5 sm:mb-6 md:mb-8 lg:mb-10"
 //       >
-       
 
 //         <motion.h1
 //           initial={{ opacity: 0, y: 20 }}
@@ -170,7 +169,7 @@
 //         className="relative"
 //       >
 //         <div className="h-1 sm:h-1.5 bg-gradient-to-r from-[#027cc3] via-[#4a9fd8] to-[#fdc300] rounded-full" />
-        
+
 //       </motion.div>
 
 //       {/* Enhanced Status Banner */}
@@ -199,7 +198,7 @@
 //               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
 //                 {eventDetails?.event_name}
 //               </h2>
-             
+
 //             </div>
 //           </div>
 //           <div className="bg-gradient-to-br from-gray-50 to-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-gray-200 shadow-sm w-full sm:w-auto">
@@ -421,13 +420,13 @@
 //                         </span>
 //                       </div>
 //                     </div>
-                    
+
 //                     {/* Event Details */}
 //                     <div className="ml-5 sm:ml-6 space-y-1">
 //                       <p className="text-[10px] sm:text-xs text-gray-500 font-medium">
 //                         {formatDateTime(event.createdAt)}
 //                       </p>
-                     
+
 //                     </div>
 //                   </div>
 //                 </motion.div>
@@ -443,8 +442,7 @@
 //         transition={{ delay: 0.7 }}
 //         className="relative overflow-hidden bg-gradient-to-r from-[#027cc3] via-[#1a8ad3] to-[#fdc300] rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 text-white group"
 //       >
-       
-        
+
 //         <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
 //           <div className="flex items-center gap-4 sm:gap-5">
 //             <div className="relative">
@@ -471,7 +469,7 @@
 //             className="group relative bg-white text-[#027cc3] px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base hover:shadow-2xl transition-all cursor-pointer overflow-hidden"
 //           >
 //             <span className="relative z-10">Contact Support</span>
-           
+
 //           </button>
 //         </div>
 //       </motion.div>
@@ -507,8 +505,6 @@
 
 // export default TrackingPage;
 
-
-
 "use client";
 import React, { useState } from "react";
 import {
@@ -537,7 +533,6 @@ import axios from "axios";
 import axiosInstance from "../config/axiosInstances";
 import { formatDateTime } from "../utilis";
 
-// Type Definitions
 interface ShipmentDetails {
   customer_name: string;
   customer_email: string;
@@ -572,9 +567,11 @@ interface EventDetails {
 }
 
 interface ApiResponse {
-  beneficiary: ShipmentDetails[];
-  data: TimelineEvent[];
-  event: EventDetails[];
+  data: {
+    beneficiary: ShipmentDetails[];
+    data: TimelineEvent[];
+    event: EventDetails[];
+  };
 }
 
 const TrackingPage = () => {
@@ -584,8 +581,11 @@ const TrackingPage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [apiError, setApiError] = useState<boolean>(false);
 
-  const [shipmentDetails, setShipmentDetails] = useState<ShipmentDetails | null>(null);
-  const [trackingTimelineDetails, setTrackingTimelineDetails] = useState<TimelineEvent[]>([]);
+  const [shipmentDetails, setShipmentDetails] =
+    useState<ShipmentDetails | null>(null);
+  const [trackingTimelineDetails, setTrackingTimelineDetails] = useState<
+    TimelineEvent[]
+  >([]);
   const [eventDetails, setEventDetails] = useState<EventDetails | null>(null);
 
   type CargoMode = "Air Freight" | "Sea Freight" | string;
@@ -620,20 +620,37 @@ const TrackingPage = () => {
           },
         },
       );
-      
-      if (response?.data?.beneficiary?.[0]) {
-        setShipmentDetails(response.data.beneficiary[0]);
-      }
-      
+
+      console.log("response", response);
+
+      // Check if response and response.data exist
       if (response?.data?.data) {
-        setTrackingTimelineDetails(response.data.data);
+        const responseData = response.data.data;
+
+        // Set shipment details from beneficiary array
+        if (responseData.beneficiary?.[0]) {
+          setShipmentDetails(responseData.beneficiary[0]);
+        }
+
+        // Set timeline details from data array
+        if (responseData.data) {
+          setTrackingTimelineDetails(responseData.data);
+        }
+
+        // Set event details from event array
+        if (responseData.event?.[0]) {
+          setEventDetails(responseData.event[0]);
+        }
+
+        // Only show results if at least one of the data points exists
+        if (
+          responseData.beneficiary?.[0] ||
+          responseData.data ||
+          responseData.event?.[0]
+        ) {
+          setShowResults(true);
+        }
       }
-      
-      if (response?.data?.event?.[0]) {
-        setEventDetails(response.data.event[0]);
-      }
-      
-      setShowResults(true);
     } catch (err) {
       console.log(err);
       setApiError(true);
@@ -642,6 +659,10 @@ const TrackingPage = () => {
       setIsLoading(false);
     }
   };
+
+  console.log(shipmentDetails);
+  console.log(trackingTimelineDetails);
+  console.log(eventDetails);
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === "Enter") {
@@ -699,7 +720,9 @@ const TrackingPage = () => {
                 placeholder="Enter tracking number"
                 className="w-full p-2.5 sm:p-3 md:p-4 pl-8 sm:pl-10 md:pl-12 border border-gray-200 bg-white focus:outline-none focus:border-[#027cc3] focus:ring-2 focus:ring-[#027cc3]/20 transition-all duration-300 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base"
                 value={trackingId}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTrackingId(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setTrackingId(e.target.value)
+                }
                 onKeyPress={handleKeyPress}
               />
             </div>
@@ -814,7 +837,9 @@ const TrackingPage = () => {
                         <div className="space-y-2">
                           <p className="text-xs sm:text-sm text-gray-600 flex items-center gap-2">
                             <Mail className="w-3.5 h-3.5 text-[#027cc3] shrink-0" />
-                            <span className="truncate">{shipmentDetails.customer_email}</span>
+                            <span className="truncate">
+                              {shipmentDetails.customer_email}
+                            </span>
                           </p>
                           <p className="text-xs sm:text-sm text-gray-600 flex items-center gap-2">
                             <Phone className="w-3.5 h-3.5 text-[#027cc3] shrink-0" />
@@ -839,7 +864,9 @@ const TrackingPage = () => {
                         <div className="space-y-2">
                           <p className="text-xs sm:text-sm text-gray-600 flex items-center gap-2">
                             <Mail className="w-3.5 h-3.5 text-[#027cc3] shrink-0" />
-                            <span className="truncate">{shipmentDetails.beneficiary_email}</span>
+                            <span className="truncate">
+                              {shipmentDetails.beneficiary_email}
+                            </span>
                           </p>
                           <p className="text-xs sm:text-sm text-gray-600 flex items-center gap-2">
                             <Phone className="w-3.5 h-3.5 text-[#027cc3] shrink-0" />
@@ -858,10 +885,13 @@ const TrackingPage = () => {
                     </p>
                     <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-between">
                       <div className="flex-1 bg-white/50 p-3 rounded-lg">
-                        <p className="text-[10px] sm:text-xs text-gray-500 mb-1">ORIGIN</p>
+                        <p className="text-[10px] sm:text-xs text-gray-500 mb-1">
+                          ORIGIN
+                        </p>
                         <p className="font-semibold text-xs sm:text-sm">
                           <span className="text-[#027cc3] font-bold">📍</span>{" "}
-                          {shipmentDetails.customer_city}, {shipmentDetails.customer_country}
+                          {shipmentDetails.customer_city},{" "}
+                          {shipmentDetails.customer_country}
                         </p>
                         <p className="text-[10px] sm:text-xs text-gray-500 mt-1 truncate">
                           {shipmentDetails.customer_address}
@@ -873,10 +903,13 @@ const TrackingPage = () => {
                         </div>
                       </div>
                       <div className="flex-1 bg-white/50 p-3 rounded-lg">
-                        <p className="text-[10px] sm:text-xs text-gray-500 mb-1">DESTINATION</p>
+                        <p className="text-[10px] sm:text-xs text-gray-500 mb-1">
+                          DESTINATION
+                        </p>
                         <p className="font-semibold text-xs sm:text-sm">
                           <span className="text-[#fdc300] font-bold">📍</span>{" "}
-                          {shipmentDetails.beneficiary_city}, {shipmentDetails.beneficiary_country}
+                          {shipmentDetails.beneficiary_city},{" "}
+                          {shipmentDetails.beneficiary_country}
                         </p>
                         <p className="text-[10px] sm:text-xs text-gray-500 mt-1 truncate">
                           {shipmentDetails.beneficiary_address}
@@ -889,28 +922,36 @@ const TrackingPage = () => {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                     <div className="bg-gradient-to-br from-gray-50 to-white p-3 sm:p-4 rounded-xl border border-gray-100 hover:border-[#027cc3]/20 transition-all group">
                       <Package className="w-4 h-4 sm:w-5 sm:h-5 text-[#027cc3] mb-2 group-hover:scale-110 transition-transform" />
-                      <p className="text-[10px] sm:text-xs text-gray-500">Total Pieces</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500">
+                        Total Pieces
+                      </p>
                       <p className="font-bold text-sm sm:text-base text-gray-900">
                         {eventDetails.quantity || "N/A"}
                       </p>
                     </div>
                     <div className="bg-gradient-to-br from-gray-50 to-white p-3 sm:p-4 rounded-xl border border-gray-100 hover:border-[#027cc3]/20 transition-all group">
                       <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-[#027cc3] mb-2 group-hover:scale-110 transition-transform" />
-                      <p className="text-[10px] sm:text-xs text-gray-500">Mode</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500">
+                        Mode
+                      </p>
                       <p className="font-bold text-sm sm:text-base text-gray-900">
                         {eventDetails.cargoMode || "N/A"}
                       </p>
                     </div>
                     <div className="bg-gradient-to-br from-gray-50 to-white p-3 sm:p-4 rounded-xl border border-gray-100 hover:border-[#027cc3]/20 transition-all group">
                       <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#027cc3] mb-2 group-hover:scale-110 transition-transform" />
-                      <p className="text-[10px] sm:text-xs text-gray-500">Dispatch</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500">
+                        Dispatch
+                      </p>
                       <p className="font-bold text-xs sm:text-sm text-gray-900">
                         {formatDateTime(eventDetails.event_date)}
                       </p>
                     </div>
                     <div className="bg-gradient-to-br from-gray-50 to-white p-3 sm:p-4 rounded-xl border border-gray-100 hover:border-[#027cc3]/20 transition-all group">
                       <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#027cc3] mb-2 group-hover:scale-110 transition-transform" />
-                      <p className="text-[10px] sm:text-xs text-gray-500">Est. Delivery</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500">
+                        Est. Delivery
+                      </p>
                       <p className="font-bold text-xs sm:text-sm text-gray-900">
                         {eventDetails.estimatedDelivery || "N/A"}
                       </p>
@@ -986,14 +1027,16 @@ const TrackingPage = () => {
                               )}
                               <span
                                 className={`font-semibold text-xs sm:text-sm ${
-                                  index === 0 ? "text-green-700" : "text-gray-800"
+                                  index === 0
+                                    ? "text-green-700"
+                                    : "text-gray-800"
                                 }`}
                               >
                                 {event.event_name}
                               </span>
                             </div>
                           </div>
-                          
+
                           {/* Event Details */}
                           <div className="ml-5 sm:ml-6 space-y-1">
                             <p className="text-[10px] sm:text-xs text-gray-500 font-medium">
@@ -1031,7 +1074,8 @@ const TrackingPage = () => {
                       Need Assistance With Your Shipment?
                     </h4>
                     <p className="text-white/80 text-xs sm:text-sm md:text-base">
-                      Our support team is available 24/7 to help you with any questions
+                      Our support team is available 24/7 to help you with any
+                      questions
                     </p>
                   </div>
                 </div>
