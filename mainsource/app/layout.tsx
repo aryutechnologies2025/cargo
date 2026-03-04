@@ -36,8 +36,25 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "Cargo Lord",
+  description: "Fast and reliable cargo tracking service.",
+  openGraph: {
+    title: "Cargo Lord",
+    description: "Fast and reliable cargo tracking service.",
+    url: "https://cargo.aryuprojects.com/",
+    siteName: "Cargo Lord",
+    images: [
+      {
+        url: "/og-image.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "Cargo Lord - Logistics Service",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
