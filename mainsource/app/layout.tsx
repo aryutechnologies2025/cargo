@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Open_Sans, Karla,Raleway,Noto_Serif_Georgian } from "next/font/google";
+import {
+  Open_Sans,
+  Karla,
+  Raleway,
+  Noto_Serif_Georgian,
+  Poppins,
+} from "next/font/google";
 import "./globals.css";
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
+
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -24,6 +31,11 @@ const georgian = Noto_Serif_Georgian({
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"], // Specify the weights you need
+  variable: "--font-poppins",
+  subsets: ["latin"],
+});
 export const metadata: Metadata = {
   title: "Cargo Lord",
 };
@@ -36,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${openSans.variable} ${karla.variable} ${raleway.variable} ${georgian.variable} antialiased font-open-sans`}
+        className={`${openSans.variable} ${karla.variable} ${raleway.variable} ${georgian.variable} ${poppins.variable} antialiased font-poppins`}
       >
         <Header />
         {children}
