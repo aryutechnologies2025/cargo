@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Phone, 
-  Menu, 
-  X, 
+import {
+  Phone,
+  Menu,
+  X,
   ChevronDown,
   MapPin,
   Clock,
@@ -16,7 +16,7 @@ import {
   Facebook,
   Twitter,
   Linkedin,
-  Instagram
+  Instagram,
 } from "lucide-react";
 
 const Header = () => {
@@ -24,20 +24,18 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
- 
-
   const navItems = [
     { name: "Home", href: "/", hasDropdown: false },
     { name: "About", href: "/about/", hasDropdown: false },
-    { 
-      name: "Services", 
-      href: "/services/", 
+    {
+      name: "Services",
+      href: "/services/",
       hasDropdown: true,
       dropdownItems: [
         { name: "Air Freight", href: "/services/air-freight" },
         { name: "Sea Freight", href: "/services/sea-freight" },
         { name: "Warehousing", href: "/services/warehousing" },
-      ]
+      ],
     },
     { name: "Track Parcel", href: "/track-your-parcel/", hasDropdown: false },
     { name: "Contact", href: "/contact/", hasDropdown: false },
@@ -51,25 +49,25 @@ const Header = () => {
     initial: { x: "100%" },
     animate: { x: 0 },
     exit: { x: "100%" },
-    transition: { type: "spring", damping: 25, stiffness: 200 }
+    transition: { type: "spring", damping: 25, stiffness: 200 },
   };
 
   const fadeIn = {
     initial: { opacity: 0, y: -10 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -10 }
+    exit: { opacity: 0, y: -10 },
   };
 
   return (
     <header className={`w-full font-karla  z-50 transition-all duration-300 `}>
-      
-
       {/* Main header */}
-      <div className={`bg-white border-b border-gray-100 transition-all duration-300 `}>
+      <div
+        className={`bg-white border-b border-gray-100 transition-all duration-300 `}
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-1">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href='/'>
+            <Link href="/">
               <Image
                 src="/icons/logo.png"
                 alt="Cargo Logistics"
@@ -88,16 +86,16 @@ const Header = () => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500">24/7 SUPPORT</p>
-                  <p className="text-lg font-bold text-[#027cc2]">(01) 114 336 321</p>
+                  <p className="text-lg font-bold text-[#027cc2]">
+                    (01) 114 336 321
+                  </p>
                 </div>
               </div>
-              
-             
             </div>
 
             {/* Mobile menu button */}
-            <button 
-              className="lg:hidden relative z-50 p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors" 
+            <button
+              className="lg:hidden relative z-50 p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
@@ -111,7 +109,7 @@ const Header = () => {
       <nav className="bg-[#027cc2] max-lg:hidden  lg:block">
         <div className="max-w-7xl mx-auto px-6">
           <ul className="flex items-center justify-end">
-            {navItems.map((item) => (
+            {/* {navItems.map((item) => (
               <li 
                 key={item.name}
                 className="relative group"
@@ -134,7 +132,69 @@ const Header = () => {
                   )}
                 </Link>
 
-                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {item.hasDropdown && activeDropdown === item.name && (
+                    <motion.div
+                      variants={fadeIn}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-lg overflow-hidden z-50"
+                    >
+                      {item.dropdownItems?.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.name}
+                          href={dropdownItem.href}
+                          className="block px-5 py-3 text-sm text-gray-700 hover:bg-[#027cc2] hover:text-white transition-colors border-b border-gray-100 last:border-0"
+                        >
+                          {dropdownItem.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </li>
+            ))} */}
+
+            {navItems.map((item) => (
+              <li
+                key={item.name}
+                className="relative group"
+                onMouseEnter={() =>
+                  item.hasDropdown && setActiveDropdown(item.name)
+                }
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                {/* Conditional Wrapper: Link for normal items, Span for dropdown triggers */}
+                {item.hasDropdown ? (
+                  <span
+                    className={`flex items-center gap-1 px-5 py-3.5 font-medium transition-all duration-300 tracking-wide cursor-default ${
+                      activeDropdown === item.name
+                        ? "text-[#FDC300] bg-white/10"
+                        : "text-white/90"
+                    }`}
+                  >
+                    {item.name}
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform duration-300 group-hover:rotate-180 ${
+                        activeDropdown === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  </span>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-1 px-5 py-3.5 font-medium transition-all duration-300 tracking-wide ${
+                      pathname === item.href
+                        ? "text-[#FDC300] bg-white/10"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+
                 <AnimatePresence>
                   {item.hasDropdown && activeDropdown === item.name && (
                     <motion.div
@@ -167,7 +227,7 @@ const Header = () => {
         {isOpen && (
           <>
             {/* Backdrop */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -176,7 +236,7 @@ const Header = () => {
             />
 
             {/* Sidebar */}
-            <motion.div 
+            <motion.div
               variants={slideIn}
               initial="initial"
               animate="animate"
@@ -186,12 +246,17 @@ const Header = () => {
               {/* Sidebar Header */}
               <div className="p-6 border-b border-white/20">
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-white font-bold text-xl tracking-wider">Menu</span>
-                  <button onClick={closeMenu} className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                  <span className="text-white font-bold text-xl tracking-wider">
+                    Menu
+                  </span>
+                  <button
+                    onClick={closeMenu}
+                    className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+                  >
                     <X size={28} />
                   </button>
                 </div>
-                
+
                 {/* Mobile Contact Info */}
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-white/90">
@@ -216,15 +281,22 @@ const Header = () => {
                     {item.hasDropdown ? (
                       <>
                         <button
-                          onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                          onClick={() =>
+                            setActiveDropdown(
+                              activeDropdown === item.name ? null : item.name,
+                            )
+                          }
                           className="w-full flex items-center justify-between px-4 py-3.5 text-white hover:bg-white/10 rounded-lg transition-colors"
                         >
                           <span className="font-medium">{item.name}</span>
-                          <ChevronDown size={18} className={`transition-transform duration-300 ${
-                            activeDropdown === item.name ? "rotate-180" : ""
-                          }`} />
+                          <ChevronDown
+                            size={18}
+                            className={`transition-transform duration-300 ${
+                              activeDropdown === item.name ? "rotate-180" : ""
+                            }`}
+                          />
                         </button>
-                        
+
                         <AnimatePresence>
                           {activeDropdown === item.name && (
                             <motion.div
@@ -263,20 +335,30 @@ const Header = () => {
                   </div>
                 ))}
 
-               
-
                 {/* Social Links - Mobile */}
                 <div className="flex justify-center gap-4 mt-8 pt-6 border-t border-white/20">
-                  <Link href="#" className="text-white/70 hover:text-white transition-colors p-2">
+                  <Link
+                    href="#"
+                    className="text-white/70 hover:text-white transition-colors p-2"
+                  >
                     <Facebook size={20} />
                   </Link>
-                  <Link href="#" className="text-white/70 hover:text-white transition-colors p-2">
+                  <Link
+                    href="#"
+                    className="text-white/70 hover:text-white transition-colors p-2"
+                  >
                     <Twitter size={20} />
                   </Link>
-                  <Link href="#" className="text-white/70 hover:text-white transition-colors p-2">
+                  <Link
+                    href="#"
+                    className="text-white/70 hover:text-white transition-colors p-2"
+                  >
                     <Linkedin size={20} />
                   </Link>
-                  <Link href="#" className="text-white/70 hover:text-white transition-colors p-2">
+                  <Link
+                    href="#"
+                    className="text-white/70 hover:text-white transition-colors p-2"
+                  >
                     <Instagram size={20} />
                   </Link>
                 </div>

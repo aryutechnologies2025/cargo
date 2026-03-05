@@ -3,12 +3,12 @@ import { motion, Variants } from "framer-motion";
 import { MdLocationOn, MdEmail, MdAccessTime } from "react-icons/md";
 
 import { BsTelephone, BsGlobe2 } from "react-icons/bs";
+import Image from "next/image";
 
 interface Office {
   id: number;
   city: string;
   country: string;
-  countryCode: string;
   address: string;
   phone: string;
   email: string;
@@ -24,23 +24,22 @@ const GlobalOffices = () => {
       id: 1,
       city: "BIRMINGHAM",
       country: "United Kingdom",
-      countryCode: "UK",
       address: "123 Business Park, Birmingham, B2 4QA",
       phone: "+44 121 234 5678",
       email: "birmingham@cargologistics.com",
-      flag: "🇬🇧",
+      flag: "/icons/uk-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
       mapLink: "https://maps.google.com/?q=Birmingham+UK",
+
     },
     {
       id: 2,
       city: "LONDON",
       country: "United Kingdom",
-      countryCode: "UK",
       address: "45 Fleet Street, London, EC4A 2BJ",
       phone: "+44 20 7123 4567",
       email: "london@cargologistics.com",
-      flag: "🇬🇧",
+      flag: "/icons/uk-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
       mapLink: "https://maps.google.com/?q=London+UK",
     },
@@ -48,11 +47,10 @@ const GlobalOffices = () => {
       id: 3,
       city: "ISLAMABAD",
       country: "Pakistan",
-      countryCode: "PK",
       address: "Blue Area, Islamabad, 44000",
       phone: "+92 51 234 5678",
       email: "islamabad@cargologistics.com",
-      flag: "🇵🇰",
+      flag: "/icons/pakistan-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
       mapLink: "https://maps.google.com/?q=Islamabad+Pakistan",
     },
@@ -60,11 +58,10 @@ const GlobalOffices = () => {
       id: 4,
       city: "KARACHI",
       country: "Pakistan",
-      countryCode: "PK",
       address: "Shahrah-e-Faisal, Karachi, 74400",
       phone: "+92 21 3456 7890",
       email: "karachi@cargologistics.com",
-      flag: "🇵🇰",
+      flag: "/icons/pakistan-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
       mapLink: "https://maps.google.com/?q=Karachi+Pakistan",
     },
@@ -72,11 +69,10 @@ const GlobalOffices = () => {
       id: 5,
       city: "MULTAN",
       country: "Pakistan",
-      countryCode: "PK",
       address: "Abdali Road, Multan, 60000",
       phone: "+92 61 456 7890",
       email: "multan@cargologistics.com",
-      flag: "🇵🇰",
+      flag: "/icons/pakistan-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
       mapLink: "https://maps.google.com/?q=Multan+Pakistan",
     },
@@ -84,17 +80,15 @@ const GlobalOffices = () => {
       id: 6,
       city: "SIALKOT",
       country: "Pakistan",
-      countryCode: "PK",
       address: "Khayaban-e-Iqbal, Sialkot, 51310",
       phone: "+92 52 456 7890",
       email: "sialkot@cargologistics.com",
-      flag: "🇵🇰",
+      flag: "/icons/pakistan-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
       mapLink: "https://maps.google.com/?q=Sialkot+Pakistan",
     },
   ];
 
-  // Fixed variants with proper typing
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -123,25 +117,11 @@ const GlobalOffices = () => {
     },
   };
 
-  const statVariants: Variants = {
-    hidden: {
-      scale: 0.8,
-      opacity: 0,
-    },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 20,
-      },
-    },
-  };
+ 
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-gradient-to-b from-white to-gray-50 px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14 ">
+      <div className=" mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -167,8 +147,6 @@ const GlobalOffices = () => {
           </p>
         </motion.div>
 
-       
-
         {/* Offices Grid */}
         <motion.div
           variants={containerVariants}
@@ -189,22 +167,19 @@ const GlobalOffices = () => {
               <div className="h-1.5 w-full bg-gradient-to-r from-[#057dc3] to-[#0469a5]" />
 
               {/* Office Header with Flag */}
-              <div className="p-6">
+              <div className="p-3 md:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-4xl">{office.flag}</span>
+                    {/* <span className="text-4xl">{office.flag}</span> */}
+                    <Image src={office.flag} width={40} height={40} alt={office.country} className="shadow rounded-full"/>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800">
+                      <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-800">
                         {office.city}
                       </h3>
                       <p className="text-sm text-gray-500">{office.country}</p>
                     </div>
                   </div>
-                  <div className="bg-[#057dc3]/10 px-3 py-1 rounded-full">
-                    <span className="text-xs font-semibold text-[#057dc3]">
-                      {office.countryCode}
-                    </span>
-                  </div>
+                
                 </div>
 
                 {/* Office Details */}
@@ -251,34 +226,29 @@ const GlobalOffices = () => {
                     className="flex-1 bg-gray-50 hover:bg-[#057dc3] text-gray-600 hover:text-white px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300 flex items-center justify-center gap-1"
                   >
                     <MdLocationOn className="text-sm" />
-                    <span>View Map</span>
+                    <span className="max-sm:hidden">View Map</span>
                   </a>
                   <a
                     href={`tel:${office.phone}`}
                     className="flex-1 bg-gray-50 hover:bg-[#057dc3] text-gray-600 hover:text-white px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300 flex items-center justify-center gap-1"
                   >
                     <BsTelephone className="text-sm" />
-                    <span>Call</span>
+                    <span className="max-sm:hidden">Call</span>
                   </a>
                   <a
                     href={`mailto:${office.email}`}
                     className="flex-1 bg-gray-50 hover:bg-[#057dc3] text-gray-600 hover:text-white px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300 flex items-center justify-center gap-1"
                   >
                     <MdEmail className="text-sm" />
-                    <span>Email</span>
+                    <span className="max-sm:hidden">Email</span>
                   </a>
                 </div>
 
-                {/* Bottom Corner Accent */}
-                <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#057dc3]/5 to-transparent rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+               
               </div>
             </motion.div>
           ))}
         </motion.div>
-
-      
-
-        
       </div>
     </section>
   );

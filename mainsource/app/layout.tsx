@@ -32,7 +32,7 @@ const georgian = Noto_Serif_Georgian({
 });
 
 const poppins = Poppins({
-  weight: ["400", "500", "600", "700"], // Specify the weights you need
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
   subsets: ["latin"],
 });
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Cargo Lord",
     images: [
       {
-        url: "/og-image.jpg", 
+        url: "https://cargo.aryuprojects.com/og-image.jpg", 
         width: 1200,
         height: 630,
         alt: "Cargo Lord - Logistics Service",
