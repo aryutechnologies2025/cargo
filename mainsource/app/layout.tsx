@@ -9,6 +9,7 @@ import {
 import "./globals.css";
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
+import GoToTop from "./components/GoToTop";
 
 
 const openSans = Open_Sans({
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${karla.variable} ${raleway.variable} ${georgian.variable} ${poppins.variable} antialiased font-poppins`}
       >
+        <GoToTop/>
         <Header />
         {children}
         <Footer />

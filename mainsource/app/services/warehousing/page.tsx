@@ -166,7 +166,11 @@ function Hero() {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
+            >
               <Link
                 href="/contact"
                 className="group inline-flex items-center justify-center gap-2 bg-[#027cc2] text-white px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-lg font-bold hover:bg-[#034a8f] transition-all shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg w-full sm:w-auto"
@@ -493,53 +497,53 @@ function ServiceFeatures() {
 
 function Coverage() {
   const locations = [
-    { 
-      name: "Los Angeles", 
+    {
+      name: "Los Angeles",
       region: "West Coast",
       size: "500,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
-    { 
-      name: "Chicago", 
+    {
+      name: "Chicago",
       region: "Midwest",
       size: "350,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
-    { 
-      name: "New York/New Jersey", 
+    {
+      name: "New York/New Jersey",
       region: "East Coast",
       size: "450,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
-    { 
-      name: "Miami", 
+    {
+      name: "Miami",
       region: "Southeast",
       size: "300,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
-    { 
-      name: "Houston", 
+    {
+      name: "Houston",
       region: "Gulf Coast",
       size: "400,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
-    { 
-      name: "Seattle", 
+    {
+      name: "Seattle",
       region: "Pacific Northwest",
       size: "250,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
-    { 
-      name: "Atlanta", 
+    {
+      name: "Atlanta",
       region: "Southeast",
       size: "350,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
-    { 
-      name: "Dallas/Fort Worth", 
+    {
+      name: "Dallas/Fort Worth",
       region: "South Central",
       size: "400,000 sq ft",
-      icon: PiMapPin 
+      icon: PiMapPin,
     },
   ];
 
@@ -559,7 +563,8 @@ function Coverage() {
             Nationwide Warehouse Network
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2">
-            Strategically positioned facilities for optimal distribution coverage
+            Strategically positioned facilities for optimal distribution
+            coverage
           </p>
         </motion.div>
 
@@ -576,28 +581,28 @@ function Coverage() {
               >
                 <div className="bg-gray-50 p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl text-center hover:bg-[#027cc2] hover:text-white transition-all duration-300 border border-gray-100 hover:border-transparent shadow-sm hover:shadow-xl h-full flex flex-col">
                   <motion.div
-                    animate={{ 
+                    animate={{
                       y: [0, -5, 0],
-                      rotate: [0, 5, -5, 0] 
+                      rotate: [0, 5, -5, 0],
                     }}
-                    transition={{ 
-                      duration: 3, 
-                      delay: index * 0.2, 
+                    transition={{
+                      duration: 3,
+                      delay: index * 0.2,
                       repeat: Infinity,
-                      repeatType: "reverse"
+                      repeatType: "reverse",
                     }}
                   >
                     <location.icon className="text-3xl sm:text-4xl text-[#027cc2] group-hover:text-white mx-auto mb-2 sm:mb-3" />
                   </motion.div>
-                  
+
                   <h4 className="text-sm sm:text-base font-bold mb-1 text-gray-900 group-hover:text-white">
                     {location.name}
                   </h4>
-                  
+
                   <p className="text-xs sm:text-sm text-gray-600 group-hover:text-white/90 mb-2">
                     {location.region}
                   </p>
-                  
+
                   <p className="text-xs sm:text-sm font-semibold text-[#027cc2] group-hover:text-white">
                     {location.size}
                   </p>
@@ -615,19 +620,31 @@ function Coverage() {
           className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center"
         >
           <div className="p-3 sm:p-4">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">12</div>
-            <div className="text-xs sm:text-sm text-gray-600">Strategic Locations</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">
+              12
+            </div>
+            <div className="text-xs sm:text-sm text-gray-600">
+              Strategic Locations
+            </div>
           </div>
           <div className="p-3 sm:p-4">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">2.5M+</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">
+              2.5M+
+            </div>
             <div className="text-xs sm:text-sm text-gray-600">Total Sq Ft</div>
           </div>
           <div className="p-3 sm:p-4">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">48</div>
-            <div className="text-xs sm:text-sm text-gray-600">Major Markets</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">
+              48
+            </div>
+            <div className="text-xs sm:text-sm text-gray-600">
+              Major Markets
+            </div>
           </div>
           <div className="p-3 sm:p-4">
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">24/7</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#027cc2]">
+              24/7
+            </div>
             <div className="text-xs sm:text-sm text-gray-600">Operations</div>
           </div>
         </motion.div>
@@ -693,58 +710,48 @@ function ProcessTimeline() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Connection line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="absolute top-16 sm:top-20 lg:top-24 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-[#027cc2] via-[#fdc300] to-[#027cc2] hidden lg:block origin-left"
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
-            {steps.map((step, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: index * 0.15 }}
+              className="relative"
+            >
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.15 }}
-                className="relative"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  boxShadow: [
+                    "0 10px 20px rgba(2,124,194,0.2)",
+                    "0 20px 40px rgba(2,124,194,0.3)",
+                    "0 10px 20px rgba(2,124,194,0.2)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  delay: index * 0.5,
+                  repeat: Infinity,
+                }}
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#027cc2] rounded-xl sm:rounded-2xl flex items-center justify-center text-white mx-auto mb-3 sm:mb-4 relative z-10 shadow-md sm:shadow-lg"
               >
-                <motion.div
-                  animate={{
-                    scale: [1, 1.1, 1],
-                    boxShadow: [
-                      "0 10px 20px rgba(2,124,194,0.2)",
-                      "0 20px 40px rgba(2,124,194,0.3)",
-                      "0 10px 20px rgba(2,124,194,0.2)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 3,
-                    delay: index * 0.5,
-                    repeat: Infinity,
-                  }}
-                  className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#027cc2] rounded-xl sm:rounded-2xl flex items-center justify-center text-white mx-auto mb-3 sm:mb-4 relative z-10 shadow-md sm:shadow-lg"
-                >
-                  <step.icon className="text-xl sm:text-2xl lg:text-2xl" />
-                </motion.div>
-
-                <div className="text-center mb-2 sm:mb-3">
-                  <span className="text-[10px] sm:text-xs font-mono text-[#027cc2] bg-[#027cc2]/10 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full">
-                    {step.phase}
-                  </span>
-                </div>
-
-                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 text-center mb-1 sm:mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-500 text-center px-2">
-                  {step.description}
-                </p>
+                <step.icon className="text-xl sm:text-2xl lg:text-2xl" />
               </motion.div>
-            ))}
-          </div>
+
+              <div className="text-center mb-2 sm:mb-3">
+                <span className="text-[10px] sm:text-xs font-mono text-[#027cc2] bg-[#027cc2]/10 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full">
+                  {step.phase}
+                </span>
+              </div>
+
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 text-center mb-1 sm:mb-2">
+                {step.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-500 text-center px-2">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -812,7 +819,8 @@ function WhyChooseUs() {
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             With over 15 years of experience in warehousing logistics, we've
-            built a reputation for reliability, accuracy, and exceptional service.
+            built a reputation for reliability, accuracy, and exceptional
+            service.
           </p>
         </motion.div>
 
@@ -824,9 +832,9 @@ function WhyChooseUs() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ 
+              whileHover={{
                 y: -5,
-                boxShadow: "0 20px 40px rgba(2,124,194,0.15)"
+                boxShadow: "0 20px 40px rgba(2,124,194,0.15)",
               }}
               className="bg-white border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-sm hover:shadow-xl transition-all"
             >
@@ -862,35 +870,9 @@ function WhyChooseUs() {
 
 function CTASection() {
   return (
-    <section className="relative mx-4 sm:mx-7 md:mx-16 lg:mx-32 my-5 sm:my-9 md:my-14 overflow-hidden bg-gradient-to-r from-[#027cc2] to-[#034a8f] rounded-xl sm:rounded-2xl">      {/* Animated background elements */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-48 sm:w-64 h-48 sm:h-64 bg-white/5 rounded-full blur-2xl sm:blur-3xl"
-      />
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-[#fdc300]/10 rounded-full blur-2xl sm:blur-3xl"
-      />
-
-      {/* Floating icons */}
-      <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="absolute left-[5%] lg:left-[10%] top-1/2 transform -translate-y-1/2 text-white/5 hidden lg:block"
-      >
-        <PiWarehouse className="text-4xl lg:text-6xl" />
-      </motion.div>
-      
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute right-[5%] lg:right-[10%] top-1/2 transform -translate-y-1/2 text-white/5 hidden lg:block"
-      >
-        <PiPackage className="text-4xl lg:text-6xl" />
-      </motion.div>
-
+    <section className="relative mx-4 sm:mx-7 md:mx-16 lg:mx-32 my-5 sm:my-9 md:my-14 overflow-hidden bg-gradient-to-r from-[#027cc2] to-[#034a8f] rounded-xl sm:rounded-2xl">
+      {" "}
+      {/* Animated background elements */}
       <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
           {/* Left side - Text content */}
@@ -907,13 +889,15 @@ function CTASection() {
               className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full mb-2 sm:mb-3 border border-white/30"
             >
               <PiClock className="text-xs sm:text-sm" />
-              <span className="text-[10px] sm:text-xs font-semibold">QUOTE IN UNDER 1 HOUR</span>
+              <span className="text-[10px] sm:text-xs font-semibold">
+                QUOTE IN UNDER 1 HOUR
+              </span>
             </motion.div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">
               Need Warehousing Space?
             </h2>
-            
+
             <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-xl">
               Get a customized storage solution quote today
             </p>

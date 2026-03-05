@@ -29,7 +29,7 @@ const GlobalOffices = () => {
       email: "birmingham@cargologistics.com",
       flag: "/icons/uk-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
-      mapLink: "https://maps.google.com/?q=Birmingham+UK",
+      mapLink: "https://maps.app.goo.gl/jfpANpPWcS37whgP9",
 
     },
     {

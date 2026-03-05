@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -59,7 +59,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`w-full font-karla  z-50 transition-all duration-300 `}>
+    <header className={`w-full z-50 transition-all duration-300 `}>
       {/* Main header */}
       <div
         className={`bg-white border-b border-gray-100 transition-all duration-300 `}
@@ -106,56 +106,9 @@ const Header = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="bg-[#027cc2] max-lg:hidden  lg:block">
+      <nav className="bg-[#027cc2] max-lg:hidden  sticky z-50 top-0">
         <div className="max-w-7xl mx-auto px-6">
           <ul className="flex items-center justify-end">
-            {/* {navItems.map((item) => (
-              <li 
-                key={item.name}
-                className="relative group"
-                onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <Link
-                  href={item.href}
-                  className={`flex items-center gap-1 px-5 py-3.5 font-medium transition-all duration-300  tracking-wide ${
-                    pathname === item.href
-                      ? "text-[#FDC300] bg-white/10"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  {item.name}
-                  {item.hasDropdown && (
-                    <ChevronDown size={16} className={`transition-transform duration-300 group-hover:rotate-180 ${
-                      activeDropdown === item.name ? "rotate-180" : ""
-                    }`} />
-                  )}
-                </Link>
-
-                <AnimatePresence>
-                  {item.hasDropdown && activeDropdown === item.name && (
-                    <motion.div
-                      variants={fadeIn}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-lg overflow-hidden z-50"
-                    >
-                      {item.dropdownItems?.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block px-5 py-3 text-sm text-gray-700 hover:bg-[#027cc2] hover:text-white transition-colors border-b border-gray-100 last:border-0"
-                        >
-                          {dropdownItem.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </li>
-            ))} */}
-
             {navItems.map((item) => (
               <li
                 key={item.name}

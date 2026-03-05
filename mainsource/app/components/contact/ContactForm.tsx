@@ -222,7 +222,7 @@ const ContactForm = () => {
               {/* Map Container - Single Map Showing All Locations */}
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 h-[250px] md:h-[400px] lg:h-[450px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21708177.26635401!2d-25.873048418154543!3d49.519284297396906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited%20Kingdom!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719.2552906858514!2d-1.848099596492199!3d52.48904022032864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bb11163b16f1%3A0x8c860dc448a63c89!2sCargo%20Lord!5e1!3m2!1sen!2sin!4v1772697135121!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -231,6 +231,8 @@ const ContactForm = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="w-full h-full"
                 />
+
+                
               </div>
 
               {/* Social Links */}
@@ -250,7 +252,7 @@ const ContactForm = () => {
                   <motion.a
                     key={index}
                     href={item.href}
-                    target='_blank'
+                    target="_blank"
                     whileHover={{ y: -3 }}
                     className="w-10 h-10 rounded-full bg-gray-100 hover:bg-[#057dc3] text-gray-600 hover:text-white flex items-center justify-center transition-all duration-300"
                   >

@@ -1,5 +1,3 @@
-
-
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
@@ -130,13 +128,13 @@ const Hero = () => {
             <motion.div
               variants={slideUp}
               className="text-white inline-flex items-center justify-center lg:justify-start space-x-2 bg-white/15 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 border border-white/10 mx-auto lg:mx-0"
-              style={{ 
-  textShadow: `
+              style={{
+                textShadow: `
     0px 1px 2px rgba(0,0,0,0.3),
     0px 2px 4px rgba(0,0,0,0.2),
     0px 4px 8px rgba(0,0,0,0.1)
-  `
-}}
+  `,
+              }}
             >
               <FiGlobe className="w-3 h-3 sm:w-4 sm:h-4 filter drop-shadow-xl" />
               <span className="text-xs sm:text-sm font-medium tracking-wide">
@@ -147,13 +145,13 @@ const Hero = () => {
             <motion.h1
               variants={slideUp}
               className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4"
-             style={{ 
-  textShadow: `
+              style={{
+                textShadow: `
     0px 1px 2px rgba(0,0,0,0.3),
     0px 2px 4px rgba(0,0,0,0.2),
     0px 4px 8px rgba(0,0,0,0.1)
-  `
-}}
+  `,
+              }}
             >
               <span className="block">Seamless</span>
               <span className="block text-white/95 mt-1">Parcel Delivery</span>
@@ -162,13 +160,13 @@ const Hero = () => {
             <motion.p
               variants={slideUp}
               className="text-sm sm:text-base md:text-lg text-white/90 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0"
-              style={{ 
-  textShadow: `
+              style={{
+                textShadow: `
     0px 1px 2px rgba(0,0,0,0.3),
     0px 2px 4px rgba(0,0,0,0.2),
     0px 4px 8px rgba(0,0,0,0.1)
-  `
-}}
+  `,
+              }}
             >
               Experience hassle-free shipping with real-time tracking, secure
               handling, and global coverage.
@@ -213,13 +211,6 @@ const Hero = () => {
             variants={scaleIn}
             className="relative mt-6 sm:mt-8 lg:mt-0"
           >
-            {/* Decorative Elements - hidden on mobile */}
-            <motion.div
-              className="absolute -top-4 -right-4 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 bg-white/5 rounded-full blur-2xl max-sm:hidden sm:block"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            />
-
             <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden mx-auto max-w-sm sm:max-w-md lg:max-w-none">
               {/* Card Header */}
               <div className="bg-gradient-to-r from-[#057dc3] to-[#0469a5] p-4 sm:p-5 md:p-6">
@@ -337,8 +328,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-
-    
     </section>
   );
 };

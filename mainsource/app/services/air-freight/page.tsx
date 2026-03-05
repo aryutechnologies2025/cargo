@@ -563,14 +563,7 @@ function ProcessTimeline() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Connection line - hidden on mobile/tablet */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="absolute top-16 sm:top-20 lg:top-24 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-[#027cc2] via-[#fdc300] to-[#027cc2] hidden lg:block origin-left"
-          />
+          
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
             {steps.map((step, index) => (
@@ -615,7 +608,6 @@ function ProcessTimeline() {
               </motion.div>
             ))}
           </div>
-        </div>
       </div>
     </section>
   );
@@ -762,7 +754,7 @@ function Coverage() {
         </motion.div>
 
         <div className="relative">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 relative z-10">
             {regions.map((region, index) => (
               <motion.div
                 key={region.name}
@@ -802,34 +794,9 @@ function Coverage() {
 function CTASection() {
   return (
     <section className="relative mx-4 sm:mx-7 md:mx-16 lg:mx-32 my-5 sm:my-9 md:my-14 overflow-hidden bg-gradient-to-r from-[#027cc2] to-[#034a8f] rounded-xl sm:rounded-2xl">
-      {/* Animated background elements */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-48 sm:w-64 h-48 sm:h-64 bg-white/5 rounded-full blur-2xl sm:blur-3xl"
-      />
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-[#fdc300]/10 rounded-full blur-2xl sm:blur-3xl"
-      />
+      
 
-      {/* Floating icons - hidden on mobile/tablet */}
-      <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="absolute left-[5%] lg:left-[10%] top-1/2 transform -translate-y-1/2 text-white/5 hidden lg:block"
-      >
-        <PiAirplane className="text-4xl lg:text-6xl" />
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-        className="absolute right-[5%] lg:right-[10%] top-1/2 transform -translate-y-1/2 text-white/5 hidden lg:block"
-      >
-        <PiPackage className="text-4xl lg:text-6xl" />
-      </motion.div>
+     
 
       <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-8">
