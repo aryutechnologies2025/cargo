@@ -69,28 +69,50 @@ const ContactForm = () => {
     }
   };
 
-  const validate = () => {
-    const newErrors: Record<string, string> = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+ const validate = () => {
+  const newErrors: Record<string, string> = {};
+  
+  // Regex Patterns
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const nameRegex = /^[a-zA-Z\s]+$/; // Only letters and spaces
+  const phoneRegex = /^\d+$/;      // Only digits
 
-    if (!formData.shipmentType)
-      newErrors.shipmentType = "Please select a service type.";
-    if (!formData.firstName.trim())
-      newErrors.firstName = "First name is required.";
-    if (!formData.lastName.trim())
-      newErrors.lastName = "Last name is required.";
-    if (!emailRegex.test(formData.email))
-      newErrors.email = "Enter a valid email address.";
-    if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
+  if (!formData.shipmentType)
+    newErrors.shipmentType = "Please select a service type.";
 
-    if (!formData.date) newErrors.date = "Please pick a date.";
-    if (!formData.gender) newErrors.gender = "Please select your gender.";
-    if (!formData.message.trim())
-      newErrors.message = "Message cannot be empty.";
+  // First Name Validation
+  if (!formData.firstName.trim()) {
+    newErrors.firstName = "First name is required.";
+  } else if (!nameRegex.test(formData.firstName)) {
+    newErrors.firstName = "First name must only contain letters.";
+  }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  // Last Name Validation
+  if (!formData.lastName.trim()) {
+    newErrors.lastName = "Last name is required.";
+  } else if (!nameRegex.test(formData.lastName)) {
+    newErrors.lastName = "Last name must only contain letters.";
+  }
+
+  // Email Validation
+  if (!emailRegex.test(formData.email))
+    newErrors.email = "Enter a valid email address.";
+
+  // Phone Validation
+  if (!formData.phone.trim()) {
+    newErrors.phone = "Phone number is required.";
+  } else if (!phoneRegex.test(formData.phone)) {
+    newErrors.phone = "Phone number must only contain digits.";
+  }
+
+  if (!formData.date) newErrors.date = "Please pick a date.";
+  if (!formData.gender) newErrors.gender = "Please select your gender.";
+  if (!formData.message.trim())
+    newErrors.message = "Message cannot be empty.";
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,16 +157,15 @@ const ContactForm = () => {
   };
 
   const shipmentTypes = [
-    { value: "air", label: "Air Freight", icon: FaPlane },
-    { value: "sea", label: "Ocean Freight", icon: FaShip },
-    { value: "road", label: "Road Freight", icon: FaTruck },
-    { value: "rail", label: "Rail Freight", icon: FaTrain },
+    { value: "air", label: "Air Freight" },
+    { value: "sea", label: "Ocean Freight" },
+    { value: "warehouse", label: "Warehouse" },
   ];
 
   const ErrorMsg = ({ name }: { name: string }) =>
     errors[name] && (
       <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
-        <MdError className="text-red-500 text-sm flex-shrink-0" />
+        <MdError className="text-red-500 text-sm shrink-0" />
         <span>{errors[name]}</span>
       </p>
     );
@@ -186,7 +207,7 @@ const ContactForm = () => {
       )}
 
       {/* Main Contact Section */}
-      <section className="w-full bg-gradient-to-b from-white to-gray-50 px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
+      <section className="w-full bg-linear-to-b from-white to-gray-50 px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
         <div className=" mx-auto">
           {/* Section Header */}
           <motion.div
@@ -204,7 +225,7 @@ const ContactForm = () => {
             </h2>
             <div className="flex items-center justify-center gap-2 mb-6">
               <div className="w-12 h-0.5 bg-gray-300"></div>
-              <div className="w-16 h-1 bg-gradient-to-r from-[#fdc300] to-[#057dc3] rounded-full"></div>
+              <div className="w-16 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] rounded-full"></div>
               <div className="w-12 h-0.5 bg-gray-300"></div>
             </div>
           </motion.div>
@@ -220,9 +241,9 @@ const ContactForm = () => {
               className="space-y-6"
             >
               {/* Map Container - Single Map Showing All Locations */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 h-[250px] md:h-[400px] lg:h-[450px]">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 h-62.5 md:h-100 lg:h-112.5">
                 <iframe
-                                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719.2552906858514!2d-1.848099596492199!3d52.48904022032864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bb11163b16f1%3A0x8c860dc448a63c89!2sCargo%20Lord!5e1!3m2!1sen!2sin!4v1772697135121!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719.2552906858514!2d-1.848099596492199!3d52.48904022032864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bb11163b16f1%3A0x8c860dc448a63c89!2sCargo%20Lord!5e1!3m2!1sen!2sin!4v1772697135121!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -231,8 +252,6 @@ const ContactForm = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="w-full h-full"
                 />
-
-                
               </div>
 
               {/* Social Links */}
@@ -272,7 +291,7 @@ const ContactForm = () => {
             >
               {/* Form Header */}
               <div className="flex items-center gap-4 mb-4 md:mb-8">
-                <div className="w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 bg-gradient-to-br from-[#057dc3] to-[#0469a5] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 bg-linear-to-br from-[#057dc3] to-[#0469a5] rounded-xl flex items-center justify-center shrink-0">
                   <BsBoxSeam className="text-white text-lg md:text-xl lg:text-2xl" />
                 </div>
                 <div>
@@ -285,9 +304,9 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <div className="w-20 h-1 bg-gradient-to-r from-[#fdc300] to-[#057dc3] rounded-full mb-8" />
+              <div className="w-20 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] rounded-full mb-8" />
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div>
                   <label className="text-sm font-medium text-gray-700 mb-1 block">
                     Service <span className="text-red-500">*</span>
@@ -453,7 +472,7 @@ const ContactForm = () => {
                   disabled={loading}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
-                  className="w-full bg-gradient-to-r from-[#057dc3] to-[#0469a5] text-white py-4 rounded-xl font-bold text-sm hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-70 relative overflow-hidden group cursor-pointer"
+                  className="w-full bg-linear-to-r from-[#057dc3] to-[#0469a5] text-white py-4 rounded-xl font-bold text-sm hover:shadow-xl transition-all flex items-center justify-center gap-3 disabled:opacity-70 relative overflow-hidden group cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 

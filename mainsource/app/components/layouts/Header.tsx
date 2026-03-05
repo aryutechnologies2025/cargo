@@ -194,7 +194,7 @@ const Header = () => {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="fixed top-0 right-0 h-full w-[85%] max-w-md bg-gradient-to-b from-[#027cc2] to-[#0469a5] z-50 shadow-2xl lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 h-full w-[85%] max-w-md bg-linear-to-b from-[#027cc2] to-[#0469a5] z-50 shadow-2xl lg:hidden overflow-y-auto"
             >
               {/* Sidebar Header */}
               <div className="p-6 border-b border-white/20">

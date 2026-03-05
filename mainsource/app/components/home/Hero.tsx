@@ -213,7 +213,7 @@ const Hero = () => {
           >
             <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden mx-auto max-w-sm sm:max-w-md lg:max-w-none">
               {/* Card Header */}
-              <div className="bg-gradient-to-r from-[#057dc3] to-[#0469a5] p-4 sm:p-5 md:p-6">
+              <div className="bg-linear-to-r from-[#057dc3] to-[#0469a5] p-4 sm:p-5 md:p-6">
                 <motion.div
                   className="flex items-center space-x-2 sm:space-x-3"
                   initial={{ x: -20, opacity: 0 }}

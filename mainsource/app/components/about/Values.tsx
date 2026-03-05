@@ -20,7 +20,7 @@ const Values = () => {
               <span className="text-[#057dc3] font-semibold text-xs sm:text-sm uppercase tracking-wider">
                 Our Values
               </span>
-              <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#fdc300] to-[#057dc3] mt-2 rounded-full"></div>
+              <div className="w-16 sm:w-20 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] mt-2 rounded-full"></div>
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">

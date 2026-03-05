@@ -1,73 +1,4 @@
 
-// import { IoUmbrella } from "react-icons/io5";
-// import { RiCustomerService2Fill } from "react-icons/ri";
-// import { RiShip2Line } from "react-icons/ri";
-// import { PiCodesandboxLogoLight } from "react-icons/pi";
-
-// const StatsSection = () => {
-//   const stats = [
-//     {
-//       number: "25,11,12",
-//       label: "Packages Delivered",
-//       icon: IoUmbrella,
-//     },
-//     {
-//       number: "19,223",
-//       label: "Repeat Customers",
-//       icon: RiCustomerService2Fill,
-//     },
-//     {
-//       number: "2,331",
-//       label: "Our Clients",
-//       icon: RiShip2Line,
-//     },
-//     {
-//       number: "1,12,26,336",
-//       label: "Commercial Goods",
-//       icon: PiCodesandboxLogoLight,
-//     },
-//   ];
-
-//   return (
-//     <section className="w-full  bg-gray-50 overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
-//           {stats.map((stat, index) => (
-//             <div
-//               key={index}
-//               className="flex gap-3 group cursor-pointer transform transition-all duration-500 hover:-translate-y-2 hover:animate-pulse"
-              
-//             >
-//               {/* Icon with animations */}
-//               <div className="relative">
-//                 <stat.icon className="h-8 w-8 mt-3 text-[#027cc2] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:animate-bounce" />
-
-//                 {/* Subtle glow effect on hover */}
-//                 <div className="absolute inset-0 bg-[#027cc2]/20 rounded-full blur-md scale-0 group-hover:scale-150 transition-transform duration-300 opacity-0 group-hover:opacity-100 -z-10" />
-//               </div>
-
-//               <div className="flex flex-col gap-2">
-//                 {/* Number with animation */}
-//                 <div className="text-xl md:text-2xl lg:text-3xl font-semibold md:font-bold lg:font-extrabold text-[#027cc2] transition-all duration-300 group-hover:scale-105 group-hover:text-[#027cc2]/90 origin-left">
-//                   {stat.number}
-//                 </div>
-
-//                 {/* Animated HR line */}
-//                 <hr className="w-1/3 border-amber-400 border-[1.5] transition-all duration-500 group-hover:w-1/2 group-hover:border-amber-500" />
-
-//                 {/* Label with animation */}
-//                 <div className="text-[#777777] text-xs font-medium transition-all duration-300 group-hover:text-[#027cc2] group-hover:translate-x-1">
-//                   {stat.label}
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//     </section>
-//   );
-// };
-
-// export default StatsSection;
-
 
 
 'use client'
@@ -152,7 +83,7 @@ const StatsSection = () => {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
+    <section className="w-full bg-linear-to-b from-gray-50 to-white overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
       {/* Section Header */}
       <div className=" text-center">
         <motion.div
@@ -167,7 +98,7 @@ const StatsSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2A2A2A] mt-3 mb-4">
             Company <span className="text-[#057dc3]">Statistics</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#fdc300] to-[#057dc3] mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] mx-auto rounded-full"></div>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto mt-6">
             Our proven track record speaks for itself with millions of packages delivered worldwide
           </p>
@@ -192,7 +123,7 @@ const StatsSection = () => {
               className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
             >
               {/* Top Gradient Bar */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-[#057dc3] to-[#0469a5]" />
+              <div className="h-1.5 w-full bg-linear-to-r from-[#057dc3] to-[#0469a5]" />
 
               {/* Decorative Background Pattern */}
               <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -206,7 +137,7 @@ const StatsSection = () => {
                   {/* Icon with animated background */}
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#057dc3]/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative bg-gradient-to-br from-[#057dc3]/10 to-transparent p-3 rounded-xl transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+                    <div className="relative bg-linear-to-br from-[#057dc3]/10 to-transparent p-3 rounded-xl transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                       <stat.icon className="h-8 w-8 text-[#057dc3]" />
                     </div>
                   </div>
@@ -256,14 +187,14 @@ const StatsSection = () => {
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true }}
-                      className="h-full bg-gradient-to-r from-[#057dc3] to-[#0469a5] rounded-full"
+                      className="h-full bg-linear-to-r from-[#057dc3] to-[#0469a5] rounded-full"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Bottom Corner Accent */}
-              <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#057dc3]/5 to-transparent rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-linear-to-tl from-[#057dc3]/5 to-transparent rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </div>

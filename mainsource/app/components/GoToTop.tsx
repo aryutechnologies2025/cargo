@@ -22,7 +22,7 @@ const GoToTop = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-16 md:bottom-5 right-3 z-[1200] flex flex-col items-center ">
+    <div className="fixed bottom-16 md:bottom-5 right-3 z-1200 flex flex-col items-center ">
       <div className="relative group">
         
         {/* Tooltip */}

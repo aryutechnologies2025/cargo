@@ -90,7 +90,7 @@ const Services = () => {
               className="group bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
             >
               <div
-                className={`bg-gradient-to-br ${service.color} w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform`}
+                className={`bg-linear-to-br ${service.color} w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform`}
               >
                 <service.icon className="text-white text-xl sm:text-2xl" />
               </div>

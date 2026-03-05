@@ -87,7 +87,7 @@ function Hero() {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute top-20 -right-40 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-[450px] bg-[#027cc2]/10 rounded-full blur-3xl"
+          className="absolute top-20 -right-40 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-112.5 bg-[#027cc2]/10 rounded-full blur-3xl"
         />
 
         <motion.div
@@ -100,7 +100,7 @@ function Hero() {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute bottom-20 -left-40 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-[450px] bg-[#027cc2]/10 rounded-full blur-3xl"
+          className="absolute bottom-20 -left-40 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-112.5 bg-[#027cc2]/10 rounded-full blur-3xl"
         />
 
         {/* Subtle grid overlay */}
@@ -143,7 +143,7 @@ function Hero() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, type: "spring" }}
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-[#027cc2] to-[#034a8f] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-1 sm:mt-2"
+              className="block text-transparent bg-clip-text bg-linear-to-r from-[#027cc2] to-[#034a8f] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-1 sm:mt-2"
             >
               & Distribution
             </motion.span>
@@ -228,7 +228,7 @@ function QuickStats() {
               }}
               className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center shadow-lg sm:shadow-xl hover:shadow-xl sm:hover:shadow-2xl transition-all border border-gray-100"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto bg-gradient-to-br from-[#027cc2] to-[#034a8f] rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-2 sm:mb-3 md:mb-4">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto bg-linear-to-br from-[#027cc2] to-[#034a8f] rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-2 sm:mb-3 md:mb-4">
                 <stat.icon className="text-xl sm:text-2xl md:text-3xl" />
               </div>
 
@@ -329,7 +329,7 @@ function Overview() {
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.3 }}
-                    className="flex-shrink-0 mt-0.5"
+                    className="shrink-0 mt-0.5"
                   >
                     <PiCheckCircle className="text-[#027cc2] text-base sm:text-lg lg:text-xl" />
                   </motion.div>
@@ -454,12 +454,12 @@ function ServiceFeatures() {
               <motion.div
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
-                className="absolute inset-0 bg-gradient-to-br from-[#027cc2]/5 to-transparent rounded-xl sm:rounded-2xl"
+                className="absolute inset-0 bg-linear-to-br from-[#027cc2]/5 to-transparent rounded-xl sm:rounded-2xl"
               />
 
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-r ${feature.color} rounded-lg sm:rounded-xl flex items-center justify-center text-white mb-3 sm:mb-4 shadow-md relative z-10`}
+                className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-linear-to-r ${feature.color} rounded-lg sm:rounded-xl flex items-center justify-center text-white mb-3 sm:mb-4 shadow-md relative z-10`}
               >
                 <feature.icon className="text-lg sm:text-xl md:text-2xl" />
               </motion.div>
@@ -481,7 +481,7 @@ function ServiceFeatures() {
                       transition={{ delay: 0.3 + i * 0.1 + j * 0.05 }}
                       className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-600"
                     >
-                      <PiCheckCircle className="text-[#027cc2] text-xs sm:text-sm flex-shrink-0" />
+                      <PiCheckCircle className="text-[#027cc2] text-xs sm:text-sm shrink-0" />
                       <span>{detail}</span>
                     </motion.li>
                   ))}
@@ -842,7 +842,7 @@ function WhyChooseUs() {
                 {/* Icon */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#027cc2] to-[#034a8f] rounded-lg sm:rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-md"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-[#027cc2] to-[#034a8f] rounded-lg sm:rounded-xl flex items-center justify-center text-white shrink-0 shadow-md"
                 >
                   <reason.icon className="text-lg sm:text-xl" />
                 </motion.div>
@@ -870,7 +870,7 @@ function WhyChooseUs() {
 
 function CTASection() {
   return (
-    <section className="relative mx-4 sm:mx-7 md:mx-16 lg:mx-32 my-5 sm:my-9 md:my-14 overflow-hidden bg-gradient-to-r from-[#027cc2] to-[#034a8f] rounded-xl sm:rounded-2xl">
+    <section className="relative mx-4 sm:mx-7 md:mx-16 lg:mx-32 my-5 sm:my-9 md:my-14 overflow-hidden bg-linear-to-r from-[#027cc2] to-[#034a8f] rounded-xl sm:rounded-2xl">
       {" "}
       {/* Animated background elements */}
       <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 lg:py-12">
@@ -917,7 +917,7 @@ function CTASection() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-white text-[#027cc2] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl text-xs sm:text-sm md:text-base w-full sm:w-auto min-w-[120px] sm:min-w-[140px] md:min-w-[160px] h-full"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-white text-[#027cc2] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl text-xs sm:text-sm md:text-base w-full sm:w-auto min-w-30 sm:min-w-35 md:min-w-40 h-full"
               >
                 <span>Request Quote</span>
                 <motion.div
@@ -936,7 +936,7 @@ function CTASection() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 border-2 border-white text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-[#027cc2] transition-all text-xs sm:text-sm md:text-base w-full sm:w-auto min-w-[120px] sm:min-w-[140px] md:min-w-[160px] h-full"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 border-2 border-white text-white px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-[#027cc2] transition-all text-xs sm:text-sm md:text-base w-full sm:w-auto min-w-30 sm:min-w-35 md:min-w-40 h-full"
               >
                 <PiHeadset className="text-sm sm:text-base md:text-lg" />
                 <span>Contact</span>

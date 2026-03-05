@@ -193,7 +193,7 @@ const CEOSection = () => {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
+    <section className="w-full bg-linear-to-b from-white to-gray-50 overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
       
       {/* Top Features with improved design */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-7 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
@@ -208,7 +208,7 @@ const CEOSection = () => {
           >
             <div className="flex items-start space-x-4">
               <div className="relative">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-[#057dc3]/10 to-[#057dc3]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-linear-to-br from-[#057dc3]/10 to-[#057dc3]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <div className="text-[#057dc3] group-hover:text-[#057dc3] transition-colors">
                     {feature.icon}
                   </div>
@@ -222,7 +222,7 @@ const CEOSection = () => {
               </div>
             </div>
             {/* Progress bar on hover */}
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#057dc3] to-[#fdc300] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-2xl"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-[#057dc3] to-[#fdc300] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-2xl"></div>
           </motion.div>
         ))}
       </div>
@@ -244,7 +244,7 @@ const CEOSection = () => {
               Our CEO's <br />
               <span className="text-[#057dc3]">Statement</span>
             </h2>
-            <div className="h-1 w-16 bg-gradient-to-r from-[#fdc300] to-[#057dc3] mt-4 rounded-full"></div>
+            <div className="h-1 w-16 bg-linear-to-r from-[#fdc300] to-[#057dc3] mt-4 rounded-full"></div>
           </div>
           
           <div className="relative">
@@ -260,7 +260,7 @@ const CEOSection = () => {
           
           {/* CEO Info */}
           <div className="flex items-center space-x-4 pt-2">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#057dc3] to-[#0469a5] flex items-center justify-center text-white font-bold text-xl">
+            <div className="w-16 h-16 rounded-full bg-linear-to-br from-[#057dc3] to-[#0469a5] flex items-center justify-center text-white font-bold text-xl">
               JD
             </div>
             <div>
@@ -362,7 +362,7 @@ const CEOSection = () => {
                     />
                     
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Hover Content */}
                     <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">

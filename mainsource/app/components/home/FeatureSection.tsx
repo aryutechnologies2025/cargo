@@ -159,7 +159,7 @@ const FeaturesSection = () => {
  
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#f7f7f7] to-white overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
+    <section className="w-full bg-linear-to-b from-[#f7f7f7] to-white overflow-hidden px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14">
       {/* Section Header */}
       <div className=" text-center">
         <motion.div
@@ -174,7 +174,7 @@ const FeaturesSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2A2A2A] mt-3 mb-4">
             Logistics Solutions <span className="text-[#057dc3]">You Can Trust</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#fdc300] to-[#057dc3] mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] mx-auto rounded-full"></div>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto mt-6">
             With over 15 years of experience, we provide reliable, efficient, and secure 
             shipping solutions tailored to your business needs.
@@ -200,7 +200,7 @@ const FeaturesSection = () => {
               className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-500 overflow-hidden"
             >
               {/* Top Gradient Bar */}
-              <div className={`h-1.5 w-full bg-gradient-to-r ${feature.gradient}`} />
+              <div className={`h-1.5 w-full bg-linear-to-r ${feature.gradient}`} />
 
               {/* Content */}
               <div className="p-6 md:p-7">
@@ -213,7 +213,7 @@ const FeaturesSection = () => {
                   {/* Icon Container */}
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#057dc3]/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative bg-gradient-to-br from-[#057dc3]/10 to-transparent p-3 rounded-xl transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                    <div className="relative bg-linear-to-br from-[#057dc3]/10 to-transparent p-3 rounded-xl transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                       <feature.icon className="h-6 w-6 md:h-7 md:w-7 text-[#057dc3]" />
                     </div>
                   </div>
@@ -233,7 +233,7 @@ const FeaturesSection = () => {
               </div>
 
               {/* Bottom Border Animation */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#fdc300] to-[#057dc3] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </motion.div>
           ))}
         </div>

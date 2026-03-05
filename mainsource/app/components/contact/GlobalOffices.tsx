@@ -30,7 +30,6 @@ const GlobalOffices = () => {
       flag: "/icons/uk-icon.png",
       workingHours: "Mon-Fri: 9am-6pm",
       mapLink: "https://maps.app.goo.gl/jfpANpPWcS37whgP9",
-
     },
     {
       id: 2,
@@ -117,10 +116,8 @@ const GlobalOffices = () => {
     },
   };
 
- 
-
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14 ">
+    <section className="w-full bg-linear-to-b from-white to-gray-50 px-5 sm:px-7 md:px-16 lg:px-32 py-5 sm:py-9 md:py-14 ">
       <div className=" mx-auto">
         {/* Section Header */}
         <motion.div
@@ -138,7 +135,7 @@ const GlobalOffices = () => {
           </h2>
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="w-12 h-0.5 bg-gray-300"></div>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#fdc300] to-[#057dc3] rounded-full"></div>
+            <div className="w-16 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] rounded-full"></div>
             <div className="w-12 h-0.5 bg-gray-300"></div>
           </div>
           <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
@@ -163,15 +160,21 @@ const GlobalOffices = () => {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
             >
-              {/* Top Gradient Bar */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-[#057dc3] to-[#0469a5]" />
+              {/* Top linear Bar */}
+              <div className="h-1.5 w-full bg-linear-to-r from-[#057dc3] to-[#0469a5]" />
 
               {/* Office Header with Flag */}
               <div className="p-3 md:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     {/* <span className="text-4xl">{office.flag}</span> */}
-                    <Image src={office.flag} width={40} height={40} alt={office.country} className="shadow rounded-full"/>
+                    <Image
+                      src={office.flag}
+                      width={40}
+                      height={40}
+                      alt={office.country}
+                      className="shadow rounded-full"
+                    />
                     <div>
                       <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-800">
                         {office.city}
@@ -179,18 +182,17 @@ const GlobalOffices = () => {
                       <p className="text-sm text-gray-500">{office.country}</p>
                     </div>
                   </div>
-                
                 </div>
 
                 {/* Office Details */}
                 <div className="space-y-3 mb-4">
                   <div className="flex items-start gap-3">
-                    <MdLocationOn className="text-[#057dc3] text-lg flex-shrink-0 mt-0.5" />
+                    <MdLocationOn className="text-[#057dc3] text-lg shrink-0 mt-0.5" />
                     <p className="text-sm text-gray-600">{office.address}</p>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <BsTelephone className="text-[#057dc3] text-sm flex-shrink-0" />
+                    <BsTelephone className="text-[#057dc3] text-sm shrink-0" />
                     <a
                       href={`tel:${office.phone}`}
                       className="text-sm text-gray-600 hover:text-[#057dc3] transition-colors"
@@ -200,7 +202,7 @@ const GlobalOffices = () => {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <MdEmail className="text-[#057dc3] text-sm flex-shrink-0" />
+                    <MdEmail className="text-[#057dc3] text-sm shrink-0" />
                     <a
                       href={`mailto:${office.email}`}
                       className="text-sm text-gray-600 hover:text-[#057dc3] transition-colors"
@@ -210,7 +212,7 @@ const GlobalOffices = () => {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <MdAccessTime className="text-[#057dc3] text-sm flex-shrink-0" />
+                    <MdAccessTime className="text-[#057dc3] text-sm shrink-0" />
                     <p className="text-sm text-gray-600">
                       {office.workingHours}
                     </p>
@@ -243,8 +245,6 @@ const GlobalOffices = () => {
                     <span className="max-sm:hidden">Email</span>
                   </a>
                 </div>
-
-               
               </div>
             </motion.div>
           ))}
