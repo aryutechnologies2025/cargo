@@ -1,13 +1,12 @@
-
 // 'use client'
 // import Image from "next/image";
 // import Link from "next/link";
 // import { motion } from "framer-motion";
 // import { BiLogoTelegram } from "react-icons/bi";
-// import { 
-//   FaFacebookF, 
-//   FaTwitter, 
-//   FaLinkedinIn, 
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaLinkedinIn,
 //   FaInstagram,
 //   FaMapMarkerAlt,
 //   FaPhoneAlt,
@@ -25,8 +24,6 @@
 //     { name: "Track Parcel", href: "/track-your-parcel" },
 //   ];
 
- 
-
 //   const contactInfo = [
 //     { icon: FaMapMarkerAlt, text: "Cargo Lord Ltd Unit 3, 3 Langton Road ,Birmingham B8 3DG" },
 //     { icon: FaPhoneAlt, text: "+1 (234) 567-8900" },
@@ -42,7 +39,7 @@
 
 //   const footerLinks = [
 //     { name: "Terms and Conditions", href: "/terms-and-conditions" },
-   
+
 //   ];
 
 //   return (
@@ -50,7 +47,7 @@
 //       {/* Main footer content */}
 //       <div className="mx-auto py-12 md:py-16 lg:py-20">
 //         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          
+
 //           {/* CEO's Statement Section */}
 //           <motion.div
 //             initial={{ opacity: 0, y: 20 }}
@@ -63,14 +60,12 @@
 //               OUR CEO's STATEMENT
 //             </h3>
 //             <div className="w-12 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] mt-2 rounded-full" />
-            
+
 //             <p className="text-gray-600 text-sm leading-relaxed mt-6 font-karla">
 //               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 //               commodo ligula eget dolor. Aenean massa. Cum sociis natoque
 //               penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 //             </p>
-            
-           
 
 //             {/* Social Links */}
 //             <div className="flex gap-3 mt-6">
@@ -102,7 +97,7 @@
 //               QUICK LINKS
 //             </h3>
 //             <div className="w-12 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] mt-2 rounded-full" />
-            
+
 //             <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-6">
 //               {quickLinks.map((link) => (
 //                 <Link
@@ -116,7 +111,6 @@
 //               ))}
 //             </div>
 
-            
 //           </motion.div>
 
 //           {/* Contact Information */}
@@ -131,7 +125,7 @@
 //               CONTACT US
 //             </h3>
 //             <div className="w-12 h-1 bg-linear-to-r from-[#fdc300] to-[#057dc3] mt-2 rounded-full" />
-            
+
 //             <div className="flex flex-col gap-4 mt-6">
 //               {contactInfo.map((item, index) => (
 //                 <div key={index} className="flex items-start gap-3 group">
@@ -145,10 +139,8 @@
 //               ))}
 //             </div>
 
-           
 //           </motion.div>
 
-       
 //         </div>
 //       </div>
 
@@ -164,8 +156,8 @@
 //             {/* Footer links */}
 //             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
 //               {footerLinks.map((link) => (
-//                 <Link 
-//                   key={link.name} 
+//                 <Link
+//                   key={link.name}
 //                   href={link.href}
 //                   className="/80 hover: text-xs uppercase tracking-wider transition-colors hover:underline"
 //                 >
@@ -175,9 +167,9 @@
 //             </div>
 
 //             {/* Powered by */}
-//             <a 
-//               href="https://aryutechnologies.com/" 
-//               target="_blank" 
+//             <a
+//               href="https://aryutechnologies.com/"
+//               target="_blank"
 //               rel="noopener noreferrer"
 //               className="group"
 //             >
@@ -195,7 +187,6 @@
 //             </a>
 //           </div>
 
-          
 //         </div>
 //     </footer>
 //   );
@@ -203,17 +194,15 @@
 
 // export default Footer;
 
-
-
-'use client'
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { useRef } from "react";
-import { 
-  FaFacebookF, 
-  FaTwitter, 
-  FaLinkedinIn, 
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
   FaInstagram,
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -223,7 +212,7 @@ import {
   FaPaperPlane,
   FaShip,
   FaWarehouse,
-  FaBoxOpen
+  FaBoxOpen,
 } from "react-icons/fa";
 import { PiAirplaneTilt } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
@@ -231,7 +220,7 @@ import { BiLogoTelegram } from "react-icons/bi";
 
 const Footer = () => {
   const ref = useRef(null);
-  
+
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -241,28 +230,54 @@ const Footer = () => {
   ];
 
   const serviceLinks = [
-    { name: "Air Freight", href: "/services/air-freight", icon: PiAirplaneTilt },
+    {
+      name: "Air Freight",
+      href: "/services/air-freight",
+      icon: PiAirplaneTilt,
+    },
     { name: "Sea Freight", href: "/services/sea-freight", icon: FaShip },
     { name: "Warehousing", href: "/services/warehousing", icon: FaWarehouse },
   ];
 
   const contactInfo = [
-    { icon: FaMapMarkerAlt, text: "Cargo Lord Ltd, Unit 3, 3 Langton Road, Birmingham B8 3DG" },
+    {
+      icon: FaMapMarkerAlt,
+      text: "Cargo Lord Ltd, Unit 3, 3 Langton Road, Birmingham B8 3DG",
+    },
     { icon: FaPhoneAlt, text: "+44 (0) 1234 567890" },
     { icon: FaEnvelope, text: "info@cargolord.com" },
     { icon: FaClock, text: "24/7 Support - Always Open" },
   ];
 
   const socialLinks = [
-    { icon: FaFacebookF, href: "https://www.facebook.com/people/CARGO-LORD-LTD/100068334092103/#", label: "Facebook", color: "hover:bg-[#1877F2]" },
-    { icon: FaXTwitter, href: "https://x.com/cargolordltd", label: "Twitter", color: "hover:bg-[#1DA1F2]" },
-    { icon: FaLinkedinIn, href: "https://www.linkedin.com/company/cargo-lord-ltd", label: "LinkedIn", color: "hover:bg-[#0A66C2]" },
-    { icon: FaInstagram, href: "https://instagram.com/cargolord", label: "Instagram", color: "hover:bg-[#E4405F]" },
+    {
+      icon: FaFacebookF,
+      href: "https://www.facebook.com/people/CARGO-LORD-LTD/100068334092103/#",
+      label: "Facebook",
+      color: "hover:bg-[#1877F2]",
+    },
+    {
+      icon: FaXTwitter,
+      href: "https://x.com/cargolordltd",
+      label: "Twitter",
+      color: "hover:bg-[#1DA1F2]",
+    },
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/cargo-lord-ltd",
+      label: "LinkedIn",
+      color: "hover:bg-[#0A66C2]",
+    },
+    {
+      icon: FaInstagram,
+      href: "https://instagram.com/cargolord",
+      label: "Instagram",
+      color: "hover:bg-[#E4405F]",
+    },
   ];
 
   const footerLinks = [
     { name: "Terms and Conditions", href: "/terms-and-conditions" },
-    
   ];
 
   // Animation variants with proper typing
@@ -287,21 +302,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Animated background elements */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 right-0 w-64 h-64 bg-[#027cc2]/5 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-0 left-0 w-64 h-64 bg-[#fdc300]/5 rounded-full blur-3xl"
-      />
-
-     
-
+    <footer className="w-full bg-linear-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Main footer content with your specified padding */}
       <div className="px-5 sm:px-7 md:px-16 lg:px-32 py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 relative z-10">
         <motion.div
@@ -315,19 +316,17 @@ const Footer = () => {
           {/* Brand Section - Larger column */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-             
               <h2 className="text-xl font-bold text-gray-800">
                 Cargo<span className="text-[#027cc2]">Lord</span>
               </h2>
             </div>
-            
+
             <p className="text-gray-600  leading-relaxed mb-4">
-              Your trusted partner in global logistics. We deliver excellence 
-              in air freight, sea freight, and warehousing solutions.
+              Your trusted partner in global logistics. We deliver excellence in
+              air freight, sea freight, and warehousing solutions.
             </p>
 
             {/* Newsletter Signup */}
-           
           </motion.div>
 
           {/* Quick Links */}
@@ -336,7 +335,7 @@ const Footer = () => {
               <span className="w-1 h-4 bg-[#fdc300] rounded-full"></span>
               QUICK LINKS
             </h3>
-            
+
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <motion.li
@@ -364,7 +363,7 @@ const Footer = () => {
               <span className="w-1 h-4 bg-[#fdc300] rounded-full"></span>
               OUR SERVICES
             </h3>
-            
+
             <ul className="space-y-2">
               {serviceLinks.map((link, index) => (
                 <motion.li
@@ -392,7 +391,7 @@ const Footer = () => {
               <span className="w-1 h-4 bg-[#fdc300] rounded-full"></span>
               CONTACT US
             </h3>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {contactInfo.map((item, index) => (
                 <motion.div
@@ -403,7 +402,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.02 }}
                   className="flex items-start gap-2 sm:gap-3 group bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100"
                 >
-                  <div className="mt-1 flex-shrink-0">
+                  <div className="mt-1 shrink-0">
                     <item.icon className="text-[#027cc2] text-base sm:text-lg group-hover:text-[#fdc300] transition-colors" />
                   </div>
                   <p className="text-gray-600 text-xs sm:text-sm group-hover:text-gray-800 transition-colors">
@@ -414,7 +413,7 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="flex flex-wrap gap-2 sm:gap-3 mt-4 sm:mt-6"
             >
@@ -438,24 +437,24 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Bottom footer with gradient background */}
-      <div className="bg-gradient-to-r from-[#027cc2]/10 to-[#034a8f]/10 border-t border-gray-200">
+      {/* Bottom footer with linear background */}
+      <div className="bg-linear-to-r from-[#027cc2]/10 to-[#034a8f]/10 border-t border-gray-200">
         <div className="px-5 sm:px-7 md:px-16 lg:px-32 py-4 sm:py-5 md:py-6">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-3 sm:gap-4">
             {/* Copyright */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               className="text-gray-600 text-center lg:text-left text-xs sm:text-sm order-2 lg:order-1"
             >
               Copyright © {new Date().getFullYear()}{" "}
-              <span className="font-semibold text-[#027cc2]">Cargo Lord</span>
-              . All rights reserved.
+              <span className="font-semibold text-[#027cc2]">Cargo Lord</span>.
+              All rights reserved.
             </motion.p>
 
             {/* Footer links */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
@@ -467,7 +466,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-600 hover:text-[#027cc2] text-[10px] sm:text-xs uppercase tracking-wider transition-colors hover:underline"
                   >
@@ -478,9 +477,9 @@ const Footer = () => {
             </motion.div>
 
             {/* Powered by */}
-            <motion.a 
-              href="https://aryutechnologies.com/" 
-              target="_blank" 
+            <motion.a
+              href="https://aryutechnologies.com/"
+              target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -490,7 +489,9 @@ const Footer = () => {
             >
               <div className="flex items-center gap-1.5 sm:gap-2 text-gray-600 hover:text-[#027cc2] transition-colors">
                 <span className="text-[10px] sm:text-xs">Powered by</span>
-                <span className="font-semibold text-xs sm:text-sm">Aryu Technologies</span>
+                <span className="font-semibold text-xs sm:text-sm">
+                  Aryu Technologies
+                </span>
                 <Image
                   src="/icons/aryu-logo.svg"
                   height={16}

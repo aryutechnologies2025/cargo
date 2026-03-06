@@ -52,14 +52,50 @@ const ContactForm = () => {
     message: "",
   });
 
+  // const handleChange = (
+  //   e: React.ChangeEvent<
+  //     HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+  //   >,
+  // ) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+
+  //   if (errors[name]) {
+  //     setErrors((prev) => {
+  //       const newErrs = { ...prev };
+  //       delete newErrs[name];
+  //       return newErrs;
+  //     });
+  //   }
+  // };
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >,
   ) => {
     const { name, value } = e.target;
+
+    // 1. Strict Input Filtering Logic
+    if (name === "firstName" || name === "lastName") {
+      // Regex: Match only letters and spaces.
+      // If the new value doesn't match, we stop the update.
+      if (value !== "" && !/^[a-zA-Z\s]*$/.test(value)) {
+        return;
+      }
+    }
+
+    if (name === "phone") {
+      // Regex: Match only digits.
+      if (value !== "" && !/^\d*$/.test(value)) {
+        return;
+      }
+    }
+
+    // 2. State Update (only reached if filtering passed)
     setFormData((prev) => ({ ...prev, [name]: value }));
 
+    // 3. Clear errors as the user types correctly
     if (errors[name]) {
       setErrors((prev) => {
         const newErrs = { ...prev };
@@ -69,50 +105,42 @@ const ContactForm = () => {
     }
   };
 
- const validate = () => {
-  const newErrors: Record<string, string> = {};
-  
-  // Regex Patterns
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const nameRegex = /^[a-zA-Z\s]+$/; // Only letters and spaces
-  const phoneRegex = /^\d+$/;      // Only digits
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
 
-  if (!formData.shipmentType)
-    newErrors.shipmentType = "Please select a service type.";
+    // Regex Patterns
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // First Name Validation
-  if (!formData.firstName.trim()) {
-    newErrors.firstName = "First name is required.";
-  } else if (!nameRegex.test(formData.firstName)) {
-    newErrors.firstName = "First name must only contain letters.";
-  }
+    if (!formData.shipmentType)
+      newErrors.shipmentType = "Please select a service type.";
 
-  // Last Name Validation
-  if (!formData.lastName.trim()) {
-    newErrors.lastName = "Last name is required.";
-  } else if (!nameRegex.test(formData.lastName)) {
-    newErrors.lastName = "Last name must only contain letters.";
-  }
+    // First Name Validation
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required.";
+    }
 
-  // Email Validation
-  if (!emailRegex.test(formData.email))
-    newErrors.email = "Enter a valid email address.";
+    // Last Name Validation
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required.";
+    }
 
-  // Phone Validation
-  if (!formData.phone.trim()) {
-    newErrors.phone = "Phone number is required.";
-  } else if (!phoneRegex.test(formData.phone)) {
-    newErrors.phone = "Phone number must only contain digits.";
-  }
+    // Email Validation
+    if (!emailRegex.test(formData.email))
+      newErrors.email = "Enter a valid email address.";
 
-  if (!formData.date) newErrors.date = "Please pick a date.";
-  if (!formData.gender) newErrors.gender = "Please select your gender.";
-  if (!formData.message.trim())
-    newErrors.message = "Message cannot be empty.";
+    // Phone Validation
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required.";
+    }
 
-  setErrors(newErrors);
-  return Object.keys(newErrors).length === 0;
-};
+    if (!formData.date) newErrors.date = "Please pick a date.";
+    if (!formData.gender) newErrors.gender = "Please select your gender.";
+    if (!formData.message.trim())
+      newErrors.message = "Message cannot be empty.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -396,8 +424,10 @@ const ContactForm = () => {
                     <div className="relative">
                       <MdPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input
-                        type="tel"
+                        type="text"
                         name="phone"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                         value={formData.phone}
                         onChange={handleChange}
                         className={`w-full border ${errors.phone ? "border-red-500" : "border-gray-200"} pl-10 pr-3 py-3 rounded-xl text-sm bg-white focus:ring-2 focus:ring-[#057dc3]/20 outline-none transition-all`}
